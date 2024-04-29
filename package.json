@@ -1,0 +1,11 @@
+{
+  "name": "jeng8615-tracker-deco2017",
+  "version": "1.0.0",
+  "description": "My attempt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Eng",
+  "license": "ISC"
+}
