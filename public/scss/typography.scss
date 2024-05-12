@@ -1,24 +1,20 @@
-body {
+h1 {
+    font-family: "Merge One", sans-serif;
     color: black;
+    font-weight: 400;
+    font-size: 40;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20;
 }
 
 @media (max-width: 768px) {
-    .container {  
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 4fr 3fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "header"
-          "main-section"
-          "support-section"
-          "nav-bar";
-    }
-      
     .header { 
         grid-area: header;
-        background-color: pink; 
+        color: white;
     }
       
     .main-section { 
@@ -27,15 +23,9 @@ body {
       
     .support-section {
         grid-area: support-section; 
-        background-color: pink;
     }
       
     .nav-bar {
         grid-area: nav-bar; 
-    }
-      
-    html, body , .container {
-        height: 100%;
-        margin: 0;
     }
 }

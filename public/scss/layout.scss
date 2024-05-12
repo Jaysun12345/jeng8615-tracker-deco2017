@@ -1,0 +1,29 @@
+
+@media (max-width: 768px) {
+    .header { 
+        grid-area: header;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #9671FF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+      
+    .main-section { 
+        grid-area: main-section; 
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+      
+    .support-section {
+        grid-area: support-section; 
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+      
+    .nav-bar {
+        grid-area: nav-bar; 
+    }
+}
