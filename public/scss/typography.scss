@@ -5,20 +5,52 @@ h1 {
     font-size: 40;
 }
 
-h2 {
+* {
     font-family: "Montserrat", sans-serif;
+}
+
+h2 {
     font-weight: 500;
     font-size: 20;
 }
 
+.anime-display-card {
+    font-size: 70%;
+    color: #646464;
+    .anime-card-title {
+        font-family: "Merge One", sans-serif;
+        color: black;
+    }
+}
+
+
 @media (max-width: 768px) {
+
+    //These are the typography settings for the subheadings that have the "see more" sections
+    .subheading-title div {
+        color: #646464;
+    }
+    .subheading-title, img {
+        width: 40px;
+    }
+
     .header { 
+        //The top of the screen with white heading 
         grid-area: header;
         color: white;
+        ul {
+            color: black;
+            font-size: 15px;
+        }
     }
       
     .main-section { 
+        //Typography settings for the date on the home page 
         grid-area: main-section; 
+        .calendar-line {
+            color: #646464;
+            font-size: 15px;
+        }
     }
       
     .support-section {

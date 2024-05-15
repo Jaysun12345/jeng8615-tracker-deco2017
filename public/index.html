@@ -19,17 +19,78 @@
 <body>
     <main>
         <section class="header">
+            <!-- settings button -->
             <img src="../img/main-images/settings-button.png">
             <h2>Home</h2>
-            <img src="../img/main-images/profile-pic.png">
+            <!-- div dropdown menu for the profile picture -->
+            <div x-data="{ isOpen: false }">
+                <button
+                    @click="isOpen = !isOpen"
+                >
+                    <img src="../img/main-images/profile-pic.png">
+                </button>
+                <ul 
+                    x-show="isOpen"
+                    @click.away = "isOpen = false"
+                >
+                    <li>
+                        <div><img src="../img/main-images/profilepic-icon.png"></div>
+                        Account
+                    </li><hr>
+                    <li>
+                        <div><img src="../img/main-images/logout-icon.png"></div>
+                        Log out
+                    </li>
+                </ul>
+            </div>
         </section>
-        <div class="main-section">
+        <section class="main-section">
             <h1>Good Morning, Jaysun</h1>
-        </div>
+            <div class="calendar-line">
+                <img src="../img/home-page/calendar-icon.png">
+                <p id="date-container">Unknown</p>
+            </div>
+            <article>
+                <div class="subheading-title">
+                    <h2>Newly Released Episodes</h2>
+                    <div>
+                        <p>see more</p>
+                        <img src="../img/main-images/seemore-arrow.png">
+                    </div>
+                </div>
+                <container class="animecards-layout">
+                    <div class="anime-display-card">
+                        <img src="../img/anime-posters/frieren.png">
+                        <p class="anime-card-title">Frieren: Beyond Journey's End</p>
+                        <p>S 1 • EPS 28</p>
+                    </div>
+                    <div class="anime-display-card">
+                        <img src="../img/anime-posters/demon-slayer.png">
+                        <p class="anime-card-title">Demon Slayer: Kimetsu no Yaiba</p>
+                        <p>S 4 • EPS 8</p>
+                    </div>
+                    <div class="anime-display-card">
+                        <img src="../img/anime-posters/attack-on-titans.png">
+                        <p class="anime-card-title">Attack on Titan: The Final Season</p>
+                        <p>S 4 • EPS 30</p>
+                    </div>
+                </container>
+            </article>
+            <article>
+                <div class="subheading-title">
+                    <h2>Your Screentime</h2>
+                    <div>
+                        <p>see more</p>
+                        <img src="../img/main-images/seemore-arrow.png">
+                    </div>
+                </div>
+            </article>
+        </section>
         <div class="support-section">
             <h1>hello</h1>
         </div>
         <div class="nav-bar"></div>
     </main>
+    <script src="./script.js"></script>
 </body>
 </html>
