@@ -16,6 +16,10 @@
 
     <title>ViewVault</title>
 </head>
+
+<!-- Script tag for the  bar graph -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
 <body>
     <main>
         <section class="header">
@@ -50,7 +54,7 @@
                 <img src="../img/home-page/calendar-icon.png">
                 <p id="date-container">Unknown</p>
             </div>
-            <article>
+            <article class="newly-released-episodes">
                 <div class="subheading-title">
                     <h2>Newly Released Episodes</h2>
                     <div>
@@ -68,7 +72,7 @@
                         <img src="../img/anime-posters/demon-slayer.png">
                         <p class="anime-card-title">Demon Slayer: Kimetsu no Yaiba</p>
                         <p>S 4 • EPS 8</p>
-                    </div>
+                    </div> 
                     <div class="anime-display-card">
                         <img src="../img/anime-posters/attack-on-titans.png">
                         <p class="anime-card-title">Attack on Titan: The Final Season</p>
@@ -76,7 +80,7 @@
                     </div>
                 </container>
             </article>
-            <article>
+            <article class="your-screentime">
                 <div class="subheading-title">
                     <h2>Your Screentime</h2>
                     <div>
@@ -84,10 +88,55 @@
                         <img src="../img/main-images/seemore-arrow.png">
                     </div>
                 </div>
+                <div class="graph-container">
+                    <p class="graph-title">Monitor your watching habits<span><img src="../img/main-images/dots.png"></span></p>
+                    <p class="small-text">Your average daily watchtime is <strong>46 min</strong></p>
+                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                </div>
             </article>
+            <article class="featured">
+                <div class="subheading-title">
+                    <h2>Featured</h2>
+                    <div>
+                        <p>see more</p>
+                        <img src="../img/main-images/seemore-arrow.png">
+                    </div>
+                </div>
+                <p class="small-text">Some anime we think you might like</p>
+                <div class="gif">
+                    <img src="../img/anime-posters/apothecary.gif">
+                    <p class="gif-card-title">Apothecary Diaries</p>
+                    <p>S 1 • EPS 24</p>
+                </div>
+            </article>
+            <article class="search">
+                <div class="subheading-title">
+                    <h2>Search</h2>
+                    <div>
+                        <p>see more</p>
+                        <img src="../img/main-images/seemore-arrow.png">
+                    </div>
+                </div>
+                <p class="small-text">Popular right now</p>
+                <container class="animecards-layout">
+                    <div class="anime-display-card">
+                        <img src="../img/anime-posters/frieren.png">
+                        <p class="anime-card-title">Frieren: Beyond Journey's End</p>
+                        <p>S 1 • EPS 28</p>
+                    </div>
+                    <div class="anime-display-card">
+                        <img src="../img/anime-posters/hunter-hunter.png">
+                        <p class="anime-card-title">Hunter X Hunter</p>
+                        <p>S 1 • EPS 26</p>
+                    </div> 
+                    <div class="anime-display-card">
+                        <img src="../img/anime-posters/one-piece.png">
+                        <p class="anime-card-title">One Piece</p>
+                        <p>S 20 • EPS 198</p>
+                    </div>
+                </container>
         </section>
         <div class="support-section">
-            <h1>hello</h1>
         </div>
         <div class="nav-bar"></div>
     </main>

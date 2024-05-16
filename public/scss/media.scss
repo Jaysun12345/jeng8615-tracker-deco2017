@@ -25,6 +25,10 @@
         }
     }
 
+    .gif {
+        width: 100%;
+    }
+
     //sets the layout for the anime title cards
     .animecards-layout {
         width: 100%;
@@ -48,6 +52,7 @@
     .header { 
         //settings for the purple sections at the top of the pages 
         grid-area: header;
+        height: 100px;
         padding-top: 10px;
         padding-bottom: 10px;
         background-color: #9671FF;
@@ -98,6 +103,8 @@
 
     .main-section { 
         grid-area: main-section; 
+        position: absolute;
+        margin-top: 110px;
         margin-left: 25px;
         margin-right: 25px;
         .calendar-line {
@@ -107,6 +114,31 @@
             align-items: center;
             img {
                 width: 35px;
+            }
+        }
+        article .graph-container {
+            border: 2px solid #E6E6E6;
+            border-radius: 10px;
+            padding: 0px 20px 15px 20px;
+            .graph-title {
+                display: flex;
+                justify-content: space-between;
+            }
+            img {
+                width: 3.5px;
+            }
+        }
+        .featured {
+            .gif {
+                img {
+                    width: 100%;
+                    border-radius: 12px;
+                    border: 2px solid #818181;
+                }
+                .gif-card-title {
+                    margin-top: 3px;
+                    margin-bottom: -15px;
+                }
             }
         }
     }
