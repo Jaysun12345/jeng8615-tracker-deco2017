@@ -1,161 +1,246 @@
-@media (min-width: 768px) {
-    .header {
-        display: none;
-    }
-}
+// h1 {
+//     font-family: "Merge One", sans-serif;
+//     color: black;
+//     font-weight: 400;
+//     font-size: 60px;
+// }
 
-@media (max-width: 768px) {
-    main {  
-       display: grid;
-       grid-template-columns: 1fr;
-       grid-template-rows: 1fr 4fr 3fr 1fr;
-       gap: 0px 0px;
-       grid-auto-flow: row;
-       grid-template-areas:
-         "header"
-         "main-section"
-         "support-section"
-         "nav-bar";
-   }
+// * {
+//     font-family: "Montserrat", sans-serif;
+// }
 
-    //the layout for the anime title cards that occur on nearly every page
-    .anime-display-card {
-        width: 30%;
-        margin-right: 12px;
-        img {
-            width: 100%;
-        }
-        p {
-            margin-top: 0px;
-            margin-bottom: 2px;
-        }
-    }
+// h2 {
+//     font-weight: 500;
+//     font-size: 23;
+// }
 
-    .gif {
-        width: 100%;
-    }
+// .anime-display-card {
+//     font-size: 70%;
+//     color: #646464;
+//     .anime-card-title {
+//         font-family: "Merge One", sans-serif;
+//         color: black;
+//     }
+// }
 
-    //sets the layout for the anime title cards
-    .animecards-layout {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-    }
 
-    //the layout for each subheading that has a "see more" section
-    .subheading-title {
-        margin-top: 15px;
-        width: 100%;
-        display: flex;    
-        align-items: end;
-        justify-content: space-between;
-        div {
-            display: flex;
-            align-items: center;
-        }
-    }
+// .small-text {
+//     font-size: 12px;
+//     color: #646464;
+//     margin-top: -15px;
+// }
 
-    .header { 
-        //settings for the purple sections at the top of the pages 
-        grid-area: header;
-        height: 100px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background-color: #9671FF;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
 
-        //The icons at the top of each page 
-        img {
-            width: 55px;
-        }
-        button {
-            border: none;
-            padding: 0;
-            border-radius: 50%;
-            background-color: #9671FF;
-        }
+// @media (max-width: 768px) {
 
-        //the typography settings for the dropdown menu when clicking the profile picture 
-        ul {
-            position: absolute;
-            padding: 20px;
-            list-style-type: none;
-            border: 2px solid #E2E2E2;
-            background-color: white;
-            border-radius: 10px;
-            margin-top: 5px;
-            margin-left: -7%;
-            box-shadow: 2px 2px 10px rgb(162, 162, 162);
-            li {
-                margin-top: 5px;
-                margin-bottom: 5px;
-                display: flex;
-                align-items: center;
-            }
-            hr {
-                width: 110px;
-                align-self: center;
-            }
-            img {
-                height: 23px;
-                width: auto;
-                margin-right: 7px;
-            }
-        }
-    }
+//     //These are the typography settings for the subheadings that have the "see more" sections
+//     .subheading-title div {
+//         color: #646464;
+//         font-size: 15px;
+//     }
+//     .subheading-title, img {
+//         width: 40px;
+//     }
 
-    .main-section { 
-        grid-area: main-section; 
-        position: absolute;
-        margin-top: 110px;
-        margin-left: 25px;
-        margin-right: 25px;
-        .calendar-line {
-            display: flex;
-            margin-top: -15px;
-            margin-bottom: -15px;
-            align-items: center;
-            img {
-                width: 35px;
-            }
-        }
-        article .graph-container {
-            border: 2px solid #E6E6E6;
-            border-radius: 10px;
-            padding: 0px 20px 15px 20px;
-            .graph-title {
-                display: flex;
-                justify-content: space-between;
-            }
-            img {
-                width: 3.5px;
-            }
-        }
-        .featured {
-            .gif {
-                img {
-                    width: 100%;
-                    border-radius: 12px;
-                    border: 2px solid #818181;
-                }
-                .gif-card-title {
-                    margin-top: 3px;
-                    margin-bottom: -15px;
-                }
-            }
-        }
-    }
+//     .header { 
+//         //The top of the screen with white heading 
+//         grid-area: header;
+//         color: white;
+//         ul {
+//             color: black;
+//             font-size: 15px;
+//         }
+//     }
       
-    .support-section {
-        grid-area: support-section; 
-        margin-left: 25px;
-        margin-right: 25px;
-    }
+//     .main-section { 
+//         //Typography settings for the date on the home page 
+//         grid-area: main-section; 
+//         .calendar-line {
+//             color: #646464;
+//             font-size: 15px;
+//         }
+//         .graph-container {
+//             font-size: 18px;
+//         }
+//         .featured {
+//             .gif {
+//                 font-size: 20px;
+//                 color: #646464;
+//                 .gif-card-title {
+//                     font-family: "Merge One", sans-serif;
+//                     color: black;
+//                 }
+//             }
+//         }
+//     }
+      
+//     .support-section {
+//         grid-area: support-section; 
+//     }
+      
+//     .nav-bar {
+//         grid-area: nav-bar; 
+//     }
+// }
 
-    .nav-bar {
-        grid-area: nav-bar; 
-    }
-}
+// @media (min-width: 768px) {
+//     .header {
+//         display: none;
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     main {  
+//        display: grid;
+//        grid-template-columns: 1fr;
+//        grid-template-rows: 1fr 4fr 3fr 1fr;
+//        gap: 0px 0px;
+//        grid-auto-flow: row;
+//        grid-template-areas:
+//          "header"
+//          "main-section"
+//          "support-section"
+//          "nav-bar";
+//    }
+
+//     //the layout for the anime title cards that occur on nearly every page
+//     .anime-display-card {
+//         width: 30%;
+//         margin-right: 12px;
+//         img {
+//             width: 100%;
+//         }
+//         p {
+//             margin-top: 0px;
+//             margin-bottom: 2px;
+//         }
+//     }
+
+//     .gif {
+//         width: 100%;
+//     }
+
+//     //sets the layout for the anime title cards
+//     .animecards-layout {
+//         width: 100%;
+//         display: flex;
+//         flex-wrap: wrap;
+//     }
+
+//     //the layout for each subheading that has a "see more" section
+//     .subheading-title {
+//         margin-top: 15px;
+//         width: 100%;
+//         display: flex;    
+//         align-items: end;
+//         justify-content: space-between;
+//         div {
+//             display: flex;
+//             align-items: center;
+//         }
+//     }
+
+//     .header { 
+//         //settings for the purple sections at the top of the pages 
+//         grid-area: header;
+//         height: 100px;
+//         padding-top: 10px;
+//         padding-bottom: 10px;
+//         background-color: #9671FF;
+//         display: flex;
+//         flex-direction: row;
+//         align-items: center;
+//         justify-content: space-around;
+
+//         //The icons at the top of each page 
+//         img {
+//             width: 55px;
+//         }
+//         button {
+//             border: none;
+//             padding: 0;
+//             border-radius: 50%;
+//             background-color: #9671FF;
+//         }
+
+//         //the typography settings for the dropdown menu when clicking the profile picture 
+//         ul {
+//             position: absolute;
+//             padding: 20px;
+//             list-style-type: none;
+//             border: 2px solid #E2E2E2;
+//             background-color: white;
+//             border-radius: 10px;
+//             margin-top: 5px;
+//             margin-left: -7%;
+//             box-shadow: 2px 2px 10px rgb(162, 162, 162);
+//             li {
+//                 margin-top: 5px;
+//                 margin-bottom: 5px;
+//                 display: flex;
+//                 align-items: center;
+//             }
+//             hr {
+//                 width: 110px;
+//                 align-self: center;
+//             }
+//             img {
+//                 height: 23px;
+//                 width: auto;
+//                 margin-right: 7px;
+//             }
+//         }
+//     }
+
+//     .main-section { 
+//         grid-area: main-section; 
+//         position: absolute;
+//         margin-top: 110px;
+//         margin-left: 25px;
+//         margin-right: 25px;
+//         .calendar-line {
+//             display: flex;
+//             margin-top: -15px;
+//             margin-bottom: -15px;
+//             align-items: center;
+//             img {
+//                 width: 35px;
+//             }
+//         }
+//         article .graph-container {
+//             border: 2px solid #E6E6E6;
+//             border-radius: 10px;
+//             padding: 0px 20px 15px 20px;
+//             .graph-title {
+//                 display: flex;
+//                 justify-content: space-between;
+//             }
+//             img {
+//                 width: 3.5px;
+//             }
+//         }
+//         .featured {
+//             .gif {
+//                 img {
+//                     width: 100%;
+//                     border-radius: 12px;
+//                     border: 2px solid #818181;
+//                 }
+//                 .gif-card-title {
+//                     margin-top: 3px;
+//                     margin-bottom: -15px;
+//                 }
+//             }
+//         }
+//     }
+      
+//     .support-section {
+//         grid-area: support-section; 
+//         margin-left: 25px;
+//         margin-right: 25px;
+//     }
+
+//     .nav-bar {
+//         grid-area: nav-bar; 
+//     }
+// }

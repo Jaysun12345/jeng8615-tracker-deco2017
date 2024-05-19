@@ -24,127 +24,33 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 
 <body>
-    <main>
-        <section class="header">
-            <!-- settings button -->
-            <img src="../img/main-images/settings-button.png">
-            <h2>Home</h2>
-            <!-- div dropdown menu for the profile picture -->
-            <div x-data="{ isOpen: false }">
-                <button
-                    @click="isOpen = !isOpen"
-                >
-                    <img src="../img/main-images/profile-pic.png">
-                </button>
-                <ul 
-                    x-show="isOpen"
-                    @click.away = "isOpen = false"
-                >
-                    <li>
-                        <div><img src="../img/main-images/profilepic-icon.png"></div>
-                        Account
-                    </li><hr>
-                    <li>
-                        <div><img src="../img/main-images/logout-icon.png"></div>
-                        Log out
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="main-section">
-            <h1>Good Morning, Jaysun</h1>
-            <div class="calendar-line">
-                <img src="../img/home-page/calendar-icon.png">
-                <p id="date-container">Unknown</p>
-            </div>
-            <article class="newly-released-episodes">
-                <div class="subheading-title">
-                    <h2>Newly Released Episodes</h2>
-                    <div>
-                        <p>see more</p>
-                        <img src="../img/main-images/seemore-arrow.png">
-                    </div>
-                </div>
-                <container class="animecards-layout">
-                    <div class="anime-display-card">
-                        <img src="../img/anime-posters/frieren.png">
-                        <p class="anime-card-title">Frieren: Beyond Journey's End</p>
-                        <p>S 1 • EPS 28</p>
-                    </div>
-                    <div class="anime-display-card">
-                        <img src="../img/anime-posters/demon-slayer.png">
-                        <p class="anime-card-title">Demon Slayer: Kimetsu no Yaiba</p>
-                        <p>S 4 • EPS 8</p>
-                    </div> 
-                    <div class="anime-display-card">
-                        <img src="../img/anime-posters/attack-on-titans.png">
-                        <p class="anime-card-title">Attack on Titan: The Final Season</p>
-                        <p>S 4 • EPS 30</p>
-                    </div>
-                </container>
-            </article>
-            <article class="your-screentime">
-                <div class="subheading-title">
-                    <h2>Your Screentime</h2>
-                    <div>
-                        <p>see more</p>
-                        <img src="../img/main-images/seemore-arrow.png">
-                    </div>
-                </div>
-                <div class="graph-container">
-                    <p class="graph-title">Monitor your watching habits<span><img src="../img/main-images/dots.png"></span></p>
-                    <p class="small-text">Your average daily watchtime is <strong>46 min</strong></p>
-                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>  
-                </div>
-            </article>
-            <article class="featured">
-                <div class="subheading-title">
-                    <h2>Featured</h2>
-                    <div>
-                        <p>see more</p>
-                        <img src="../img/main-images/seemore-arrow.png">
-                    </div>
-                </div>
-                <p class="small-text">Some anime we think you might like</p>
-                <div class="gif">
-                    <img src="../img/anime-posters/apothecary.gif">
-                    <p class="gif-card-title">Apothecary Diaries</p>
-                    <p>S 1 • EPS 24</p>
-                </div>
-            </article>
-            <article class="search">
-                <div class="subheading-title">
-                    <h2>Search</h2>
-                    <div>
-                        <p>see more</p>
-                        <img src="../img/main-images/seemore-arrow.png">
-                    </div>
-                </div>
-                <p class="small-text">Popular right now</p>
-                <container class="animecards-layout">
-                    <div class="anime-display-card">
-                        <img src="../img/anime-posters/frieren.png">
-                        <p class="anime-card-title">Frieren: Beyond Journey's End</p>
-                        <p>S 1 • EPS 28</p>
-                    </div>
-                    <div class="anime-display-card">
-                        <img src="../img/anime-posters/hunter-hunter.png">
-                        <p class="anime-card-title">Hunter X Hunter</p>
-                        <p>S 1 • EPS 26</p>
-                    </div> 
-                    <div class="anime-display-card">
-                        <img src="../img/anime-posters/one-piece.png">
-                        <p class="anime-card-title">One Piece</p>
-                        <p>S 20 • EPS 198</p>
-                    </div>
-                </container>
-        </section>
-        
-        <div class="support-section">
-            
+    <div class="row">
+        <div class="col-12 col-md-0">
+            <header>
+                <!-- settings button -->
+                <img src="../img/main-images/settings-button.png">
+                <h2 class="header-headings">Home</h2>
+                <!-- profile picture -->
+                <img src="../img/main-images/profile-pic.png">
+            </header>
         </div>
-        <div class="nav-bar"></div>
-    </main>
+        <div class="col-0 col-md-2">
+            <nav>
+                nav
+            </nav>
+        </div>
+        <div class="col-12 col-md-7">
+            <main>
+                Good Morning, Jaysun.
+            </main>
+        </div>
+        <div class="col-12 col-md-3">
+            <aside>
+                aside
+            </aside>
+        </div>
+    </div>
+
     <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

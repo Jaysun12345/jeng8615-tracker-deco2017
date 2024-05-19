@@ -1,17 +1,44 @@
 @import 'layout';
 @import 'typography';
-@import 'media';
 
-
-main {  
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 4fr 3fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "header"
-      "main-section"
-      "support-section"
-      "nav-bar";
+// MAIN TYPOGRAPHY 
+* {
+    font-family: "Montserrat", sans-serif;
 }
+
+h2 {
+    font-weight: 500;
+    font-size: 23;
+}
+
+.header-headings {
+    color: white;
+    font-size: 20px;
+}
+
+//Desktop layout
+@media (min-width: 768px) {
+    header {
+        display: none;
+    }
+}
+
+//Mobile layout
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+    header {
+        background-color: #9671FF;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-around;
+        img {
+            width: 50px;
+        }
+    }
+}
+
