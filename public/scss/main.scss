@@ -6,26 +6,29 @@
     font-family: "Montserrat", sans-serif;
 }
 
-h2 {
-    font-weight: 500;
-    font-size: 23;
+h1 {
+    font-family: "Merge One", sans-serif;
+    span {
+        font-family: "Merge One", sans-serif;
+    }
 }
 
 .header-headings {
     color: white;
     font-size: 20px;
+    margin-left: 20px;
 }
 
 //Desktop layout
 @media (min-width: 768px) {
-    header {
+    header, .mobile-nav {
         display: none;
     }
 }
 
 //Mobile layout
 @media (max-width: 768px) {
-    nav {
+    nav, aside {
         display: none;
     }
     header {
@@ -39,6 +42,152 @@ h2 {
         img {
             width: 50px;
         }
+        .dropdown-arrow {
+            width: 20px;
+        }
+        .profile-button {
+            border: none;
+            border-radius: 120%;
+            background-color: #9671FF;
+        }
+        #login {
+            position: absolute;
+            margin-top: 30px;
+            margin-left: -120px;
+            background-color: white;
+            border: 2px solid #E6E6E6;
+            border-radius: 15px;
+            padding: 20px;
+            .form-label {
+                font-weight: 500;
+            }
+            button {
+                border: none;
+                border-radius: 10px;
+                padding: 5px;
+                padding-left: 10px;
+                padding-right: 10px;;
+                font-weight: 500;
+                color: #9671FF;
+            }
+        }
+    }
+    .mobile-nav {
+        background-color: white;
+        padding: 15px 10% 15px 10%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0px;
+        border-top: 2px solid #CBCBCB;
+        img {
+            height: 25px;
+        }
+        button {
+            background-color: white;
+            border: none;
+            .add-button {
+                height: 50px;
+            }
+        }
+    }
+    main {
+        margin: 20px 30px 80px 30px;
+        h2 {
+            font-size: 23px;
+        }
+        .smaller-grey-text {
+            color: #646464;
+            margin-top: -20px;
+        }
+        .calendar-line {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+            img {
+                width: 22px;
+                margin-right: 10px;
+            }
+            #date-container {
+                color: #646464;
+            }
+        }
+        .sub-headings {
+            display: flex;
+            justify-content: space-between;
+            button {
+                color: #646464;
+                margin-top: 3px;
+                display: flex;
+                border: none;
+                background-color: white;
+                img {
+                    width: 30px;
+                }
+            }
+        }
+        .anime-cards-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            button {
+                width: 31%;
+                background-color: white;
+                border: none;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                img {
+                    width: 100%;
+                    margin-bottom: 3px;
+                }
+                p {
+                    font-family: "Merge One", sans-serif;
+                    text-align: left;
+                    font-size: 15px;
+                    line-height: 120%;
+                }
+                .season-and-eps {
+                    margin-top: -13px;
+                    color: #646464;
+                }
+            }
+        }
+        .graph-container {
+            margin-top: 7px;
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 2px solid #E6E6E6;
+            border-radius: 10px;
+            img {
+                width: 5px;
+            }
+            .graph-title {
+                font-size: 20px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .featured {
+            .featured-container {
+                margin-bottom: 7%;
+                .featured-text {
+                    font-family: "Merge One", sans-serif;
+                    font-size: 30px;
+                    margin-top: 3px;
+                }
+                .season-and-eps {
+                    color: #646464;
+                    margin-top: -17;
+                }
+            }
+            img {
+                width: 100%;
+                border-radius: 20px;
+                border: 2px solid #646464;
+            }
+        }
+
     }
 }
-

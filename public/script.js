@@ -1,3 +1,18 @@
+//Adjusting username when profile picture is clicked and logi dropdown is displayed 
+function returnName() {
+    let inputtedName = document.getElementById("input-name").value;
+    //if "submit" button is clicked without an imputted name, the follwoing text is displayed on the main page
+    if (inputtedName === "") {
+        document.getElementById("default-name").innerText = ", welcome to ViewVault";
+    } else {
+        document.getElementById("default-name").innerText = ", " + inputtedName;
+    }
+    localStorage.setItem("name", inputtedName);
+    document.getElementById("login").style.display = "none";
+}
+//If name is saved, then displays saved name
+document.getElementById("default-name").innerHTML = localStorage.getItem("name");
+
 // Function to get the current date and time
 function getCurrentDateAndTime() {
     const weekdayArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -15,11 +30,9 @@ const dateDisplay = document.getElementById("date-container");
 // Set the innerHTML of the element to the current date and time returned by the function
 dateDisplay.innerHTML = getCurrentDateAndTime();
 
-// var xValues = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-// var yValues = [55, 49, 44, 24, 15];
-
-
 //Making the bar graph 
+var xValues = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var yValues = [55, 49, 44, 24, 15];
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
