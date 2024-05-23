@@ -6,12 +6,14 @@ function returnName() {
         document.getElementById("default-name").innerText = ", welcome to ViewVault";
     } else {
         document.getElementById("default-name").innerText = ", " + inputtedName;
+        document.getElementById("profile-name").innerText = inputtedName;
     }
     localStorage.setItem("name", inputtedName);
     document.getElementById("login").style.display = "none";
 }
 //If name is saved, then displays saved name
-document.getElementById("default-name").innerHTML = localStorage.getItem("name");
+document.getElementById("default-name").innerHTML = ", " + localStorage.getItem("name");
+document.getElementById("profile-name").innerHTML = localStorage.getItem("name");
 
 // Function to get the current date and time
 function getCurrentDateAndTime() {

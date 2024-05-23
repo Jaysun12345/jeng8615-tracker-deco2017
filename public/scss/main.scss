@@ -24,11 +24,295 @@ h1 {
     header, .mobile-nav {
         display: none;
     }
+    html body {
+        background-color: #EEEEEE;
+    }
+    nav {
+        width: 80%;
+        position: sticky;
+        top: 30;
+        margin-top: 30px;
+        margin-left: 55px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 25px;
+        padding-bottom: 30px;
+        gap: 40px;
+        border-radius: 20px;
+        background-color: white;
+        button {
+            background-color: white;
+            border: none;
+            width: 50px;
+        }
+        .view-vault-icon {
+            font-size: 120%;
+            font-weight: 800;
+            margin-left: -18px;
+            color: #9671FF;
+            line-height: 20px;
+            margin-bottom: 40px;
+        }
+        .add-button {
+            height: 50px;
+            margin-left: -5px;
+        }
+        img {
+            height: 20px;
+        }
+        .settings-sidenav {
+            margin-top: 80px;
+        }
+    }
+    main {
+        background-color: white;
+        padding: 20px 40px 20px 40px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        margin-left: 10px;
+        border-radius: 20px;
+        h2 {
+            font-size: 23px;
+        }
+        .desktop-location-text {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 500;
+            img {
+                width: 35px;
+            }
+            .profile-button {
+                border: none;
+                border-radius: 120%;
+                background-color: white;
+            }
+        }
+        .good-afternoon-section {
+            background-color: #9671FF;
+            padding: 30px 20px 3px 30px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            h1 {
+                width: 300px;
+            }
+            .hidden img {
+                position: relative;
+                width: 140px;
+                margin-right: 30px;
+                margin-top: -60px;
+            }
+            .mobile-calendar-icon {
+                display: none;
+            }
+        }
+        .smaller-grey-text {
+            color: #646464;
+            font-size: 13px;
+            margin-top: -18px;
+        }
+        .calendar-line {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 2px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            img {
+                width: 16px;
+                margin-right: 7px;
+            }
+            #date-container {
+                color: white;
+            }
+        }
+        .sub-headings {
+            display: flex;
+            justify-content: space-between;
+            h2 {
+                font-size: 18px;
+            }
+            button {
+                color: #646464;
+                font-size: 11px;
+                margin-top: 3px;
+                display: flex;
+                border: none;
+                background-color: white;
+                img {
+                    width: 24px;
+                }
+            }
+        }
+        .anime-cards-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            button {
+                width: 90px;
+                background-color: white;
+                border: none;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                img {
+                    width: 100%;
+                    margin-bottom: 3px;
+                }
+                p {
+                    font-family: "Merge One", sans-serif;
+                    text-align: left;
+                    font-size: 11px;
+                    line-height: 120%;
+                }
+                .season-and-eps {
+                    margin-top: -13px;
+                    color: #646464;
+                }
+            }
+        }
+        .graph-container {
+            margin-top: 7px;
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 2px solid #E6E6E6;
+            border-radius: 10px;
+            img {
+                width: 5px;
+            }
+            .graph-title {
+                font-size: 20px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .featured {
+            .featured-container {
+                margin-bottom: 7%;
+                .featured-text {
+                    font-family: "Merge One", sans-serif;
+                    font-size: 30px;
+                    margin-top: 3px;
+                }
+                .season-and-eps {
+                    color: #646464;
+                    margin-top: -17;
+                }
+            }
+            img {
+                width: 100%;
+                border-radius: 20px;
+                border: 2px solid #646464;
+            }
+        }
+
+    }
+    aside {
+        background-color: white;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 20px 20px 20px;
+        margin: 30px 0px 40px -10px;
+        border-radius: 20px;
+        .aside-profilepic{
+            width: 120px;
+            align-self: center;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        #profile-name {
+            font-family: "Merge One", sans-serif;
+            margin-bottom: 35px;
+            align-self: center;
+        }
+        .sub-headings {
+            display: flex;
+            justify-content: space-between;
+            h2 {
+                font-size: 12px;
+            }
+            button {
+                color: #646464;
+                font-size: 9px;
+                display: flex;
+                border: none;
+                background-color: white;
+                img {
+                    width: 20px;
+                }
+            }
+        }
+        .anime-cards-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            button {
+                width: 90px;
+                background-color: white;
+                border: none;
+                margin-bottom: -10px;
+                padding: 0px;
+                display: flex;
+                flex-direction: column;
+                img {
+                    width: 100%;
+                    margin-bottom: 3px;
+                }
+                p {
+                    font-family: "Merge One", sans-serif;
+                    text-align: left;
+                    font-size: 11px;
+                    line-height: 120%;
+                }
+                .season-and-eps {
+                    margin-top: -13px;
+                    color: #646464;
+                }
+            }
+        }
+        .explore-button {
+            background-color: #8CC48E;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            .green-explore-box {
+                background-color: #8CC48E; 
+                border: none;
+                color: white;
+                font-size: 20;
+                font-weight: 500;
+                align-self: flex-start;
+            }
+            img {
+                width: 135px;
+                position: relative;
+                right: 40px;
+                top: -2px;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+//Want the naruto character to disappear earlier
+@media (max-width: 860px) {
+    .hidden .chibi-naruto {
+        display: none;
+    }
 }
 
 //Mobile layout
 @media (max-width: 768px) {
-    nav, aside {
+    nav, aside, .hidden {
         display: none;
     }
     header {
@@ -116,6 +400,7 @@ h1 {
         .sub-headings {
             display: flex;
             justify-content: space-between;
+            margin-top: 10px;
             button {
                 color: #646464;
                 margin-top: 3px;
@@ -127,12 +412,20 @@ h1 {
                 }
             }
         }
+        .anime-button-div {
+            width: 31%;
+            .anime-card-deets {
+                border: 2px solid red;
+                position: absolute;
+                background-color: pink;
+            }
+        }
         .anime-cards-layout {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             button {
-                width: 31%;
+                // width: 31%;
                 background-color: white;
                 border: none;
                 padding: 0px;
@@ -171,7 +464,6 @@ h1 {
         }
         .featured {
             .featured-container {
-                margin-bottom: 7%;
                 .featured-text {
                     font-family: "Merge One", sans-serif;
                     font-size: 30px;

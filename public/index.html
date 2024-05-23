@@ -51,12 +51,9 @@
         <!-- NAVIGATION ONLY ON DESKTOP -->
         <div class="col-0 col-md-2">
             <nav>
-                nav
-            </nav>
-        </div>
-        <!-- NAVIGATION BAR ON MOBILE -->
-        <div class="col-12 col-md-0">
-            <section class="mobile-nav">
+                <button class="view-vault-icon">
+                    View Vault
+                </button>
                 <button>
                     <img src="../img/home-page/home-active.png">
                 </button>
@@ -72,42 +69,84 @@
                 <button>
                     <img src="../img/main-images/profile-icon.png">
                 </button>
-            </section>
+                <img class="settings-sidenav" src="../img/main-images/settings-navbar.png">   
+            </nav>
         </div>
         <!-- MAIN -->
         <div class="col-12 col-md-7">
-            <main onLoad="codeAddress">
+            <main>
+                <div class="hidden">
+                    <section class="desktop-location-text">
+                        Home
+                        <div x-data="{ isOpen: false }">
+                            <button class = "profile-button" @click="isOpen = !isOpen" @keydown.escape="isOpen = false">
+                                <img src="../img/main-images/profile-pic.png">
+                            </button>
+                        </div>
+                    </section>
+                </div>
                 <!-- Calendar Line -->
-                <h1 style="font-size: 40px">Good afternoon<span id="default-name" style="font-size: 40px">, welcome to ViewVault.</span></h1>
-                <section class="calendar-line">
-                    <img src="../img/home-page/calendar-icon.png">
-                    <p id="date-container">Unknown</p>
-                </section>
+                <div class="good-afternoon-section">
+                    <div>
+                        <h1 style="font-size: 35px">Good afternoon<span id="default-name" style="font-size: 35px; font-weight: 900;">, welcome to ViewVault.</span></h1>
+                        <section class="calendar-line">
+                            <img class="mobile-calendar-icon" src="../img/home-page/calendar.png">
+                            <img class="hidden" src="../img/home-page/calendar-white.png">
+                            <p id="date-container">Unknown</p>
+                        </section>
+                    </div>
+                    <div class="hidden">
+                        <img class="chibi-naruto" src="../img/home-page/naruto-chibi.png">
+                    </div>
+                </div>
                 <!-- Newly Released -->
                 <section class="newly-released">
                     <container class="sub-headings">
-                        <h2 style="margin-bottom: 15px; margin-top: 10px;">Newly Released</h2>
+                        <h2 style="margin-bottom: 15px;">Newly Released</h2>
                     </container>
                     <container class="anime-cards-layout">
-                        <button>
-                            <img src="../img/anime-posters/frieren.png">
-                            <p class="anime-title">Frieren: Beyond Journey's End</p>
-                            <p class="season-and-eps">S 1 • EPS 28</p>
-                        </button>
-                        <button>
-                            <img src="../img/anime-posters/demon-slayer.png">
-                            <p class="anime-title">Demon Slayer: Kimetsu no Yaiba</p>
-                            <p class="season-and-eps">S 4 • EPS 8</p>
-                        </button>
-                        <button>
-                            <img src="../img/anime-posters/attack-on-titans.png">
-                            <p class="anime-title">Attack on Titan: The Final Season</p>
-                            <p class="season-and-eps">S 4 • EPS 30</p>
-                        </button>
+                        <div class="anime-button-div" x-data="{ open: false }">
+                            <button @click="open = ! open">
+                                <img src="../img/anime-posters/frieren.png">
+                                <p class="anime-title">Frieren: Beyond Journey's End</p>
+                                <p class="season-and-eps">S 1 • EPS 28</p>
+                            </button>
+                            <div class="anime-card-deets" x-show="open" x-transition>
+                                Hello 👋
+                            </div>
+                        </div>
+                        <div class="anime-button-div" x-data="{ open: false }">
+                            <button @click="open = ! open">
+                                <img src="../img/anime-posters/demon-slayer.png">
+                                <p class="anime-title">Demon Slayer: Kimetsu no Yaiba</p>
+                                <p class="season-and-eps">S 4 • EPS 8</p>
+                            </button>
+                            <div class="anime-card-deets" x-show="open" x-transition>
+                                Hello 👋
+                            </div>
+                        </div>
+                        <div class="anime-button-div" x-data="{ open: false }">
+                            <button @click="open = ! open">
+                                <img src="../img/anime-posters/attack-on-titans.png">
+                                <p class="anime-title">Attack on Titan: The Final Season</p>
+                                <p class="season-and-eps">S 4 • EPS 30</p>
+                            </button>
+                            <div class="anime-card-deets" x-show="open" x-transition>
+                                Hello 👋
+                            </div>
+                        </div>
+                        <!-- This hidden anime card will disappear when the screen becomes too small -->
+                        <div class="hidden">
+                            <button>
+                                <img src="../img/anime-posters/jujutsu-kaisen.png">
+                                <p class="anime-title">Jujutsu Kaisen</p>
+                                <p class="season-and-eps">S 2 • EPS 23</p>
+                            </button>
+                        </div>
                     </container>
                 </section>
                 <!-- Your Screentime -->
-                <section class="your-screentime">
+                <section class="your-screentime" style="margin-top: 10px;">
                     <container class="sub-headings">
                         <h2>Your Screentime</h2>
                         <button>
@@ -134,7 +173,7 @@
                     </container>
                 </section>
                 <!-- Search -->
-                <section class="search">
+                <section class="search" style="margin-top: 20px;">
                     <container class="sub-headings">
                         <h2>Search</h2>
                         <button>
@@ -144,21 +183,42 @@
                     </container>
                     <p class="smaller-grey-text">Popular right now</p>
                     <container class="anime-cards-layout">
+                        <div class="anime-button-div" x-data="{ open: false }">
+                            <button @click="open = ! open">
+                                <img src="../img/anime-posters/frieren.png">
+                                <p class="anime-title">Frieren: Beyond Journey's End</p>
+                                <p class="season-and-eps">S 1 • EPS 28</p>
+                            </button>
+                            <div class="anime-card-deets" x-show="open" x-transition>
+                                Hello 👋
+                            </div>
+                        </div>
+                        <div class="anime-button-div" x-data="{ open: false }">
+                            <button>
+                                <img src="../img/anime-posters/hunter-hunter.png">
+                                <p class="anime-title">Hunter X Hunter</p>
+                                <p class="season-and-eps">S 1 • EPS 26</p>
+                            </button>
                         <button>
-                            <img src="../img/anime-posters/frieren.png">
-                            <p class="anime-title">Frieren: Beyond Journey's End</p>
-                            <p class="season-and-eps">S 1 • EPS 28</p>
+                            <img src="../img/anime-posters/one-piece.png">
+                            <p class="anime-title">One Piece</p>
+                            <p class="season-and-eps">S 20 • EPS 198</p>
                         </button>
-                        <button>
-                            <img src="../img/anime-posters/demon-slayer.png">
-                            <p class="anime-title">Demon Slayer: Kimetsu no Yaiba</p>
-                            <p class="season-and-eps">S 4 • EPS 8</p>
-                        </button>
-                        <button>
-                            <img src="../img/anime-posters/attack-on-titans.png">
-                            <p class="anime-title">Attack on Titan: The Final Season</p>
-                            <p class="season-and-eps">S 4 • EPS 30</p>
-                        </button>
+                        <!-- These class = "hidden" buttons will disappear when the screen becomes too small -->
+                        <div class="hidden">
+                            <button>
+                                <img src="../img/anime-posters/delicious-in-dungeon.png">
+                                <p class="anime-title">Delicious in Dungeon</p>
+                                <p class="season-and-eps">S 1 • EPS 16</p>
+                            </button>
+                        </div>
+                        <div class="hidden">
+                            <button>
+                                <img src="../img/anime-posters/apothecary.png">
+                                <p class="anime-title">The Apothecary Diaries</p>
+                                <p class="season-and-eps">S 1 • EPS 24</p>
+                            </button>
+                        </div>
                     </container>
                 </section>
             </main>
@@ -166,10 +226,75 @@
         <!-- ASIDE ONLY ON DESKTOP -->
         <div class="col-12 col-md-3">
             <aside>
-                aside
+                <p style="font-weight: 500;">
+                    Your Profile
+                </p>
+                <img class="aside-profilepic" src="../img/main-images/profile-pic.png">
+                <p id="profile-name">Hello</p>
+                <section class="your-viewvault">
+                    <container class="sub-headings">
+                        <h2>Your ViewVault</h2>
+                        <button>
+                            <p>see more</p>
+                            <img src="../img/main-images/see-more-icon.png">
+                        </button>
+                    </container>
+                    <container class="anime-cards-layout">
+                        <button>
+                            <img src="../img/anime-posters/attack-on-titans.png">
+                            <p class="anime-title">Attack on Titan: The Final Season</p>
+                            <p class="season-and-eps">S 4 • EPS 30</p>
+                        </button>
+                        <button>
+                            <img src="../img/anime-posters/demon-slayer.png">
+                            <p class="anime-title">Demon Slayer: Kimetsu no Yaiba</p>
+                            <p class="season-and-eps">S 4 • EPS 8</p>
+                        </button>
+                        <button>
+                            <img src="../img/anime-posters/frieren.png">
+                            <p class="anime-title">Frieren: Beyond Journey's End</p>
+                            <p class="season-and-eps">S 1 • EPS 28</p>
+                        </button>
+                        <button>
+                            <img src="../img/anime-posters/spy-family.png">
+                            <p class="anime-title">Spy X Family</p>
+                            <p class="season-and-eps">S 2 • EPS 12</p>
+                        </button>
+                    </container>
+                </section>
+                <container class="sub-headings">
+                    <h2 style="margin-bottom: -5px; margin-top: 15px;">Add to Your ViewVault</h2>
+                </container>
+                <section class="explore-button">
+                    <button class="green-explore-box">
+                        Explore
+                    </button>
+                    <img src="../img/home-page/search-pic.png">
+                </section>
             </aside>
         </div>
+        <!-- NAVIGATION BAR ON MOBILE -->
+            <div class="col-12 col-md-0">
+                <section class="mobile-nav">
+                    <button>
+                        <img src="../img/home-page/home-active.png">
+                    </button>
+                    <button>
+                        <img src="../img/main-images/search-icon.png">
+                    </button>
+                    <button>
+                        <img class="add-button" src="../img/main-images/add-button.png">
+                    </button>
+                    <button>
+                        <img src="../img/main-images/clock-icon.png">
+                    </button>
+                    <button>
+                        <img src="../img/main-images/profile-icon.png">
+                    </button>
+                </section>
+            </div>
     </div>
+    
 
     <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
