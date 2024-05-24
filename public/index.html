@@ -111,8 +111,36 @@
                                 <p class="anime-title">Frieren: Beyond Journey's End</p>
                                 <p class="season-and-eps">S 1 • EPS 28</p>
                             </button>
-                            <div class="anime-card-deets" x-show="open" x-transition>
-                                Hello 👋
+                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
+                                <button>
+                                    <img class="exit-button" @click="open = false" src="../img/main-images/anime-popup/exit-button.png" alt="exit button">
+                                </button>
+                                <div class="popup-anime-title-and-image">
+                                    <div class="anime-main-text">
+                                        <p class="anime-title">Frieren: Beyond Journey's End</p>
+                                        <p class="year-and-season">2023 • Season 1</p>
+                                        <p class="anime-description">An elf and her friends defeat a demon king in a great war; but the war is over, and the elf must search for a new way of life.</p>
+                                        <div class="anime-card-genres">
+                                            <img src="../img/search-page/Fantasy.png" alt="fantasy icon">
+                                            <img src="../img/search-page/Adventure.png" alt="adventure icon">
+                                        </div>
+                                        <div class="action-bar">
+                                            <button>
+                                                <img src="../img/main-images/anime-popup/tick-circle.png" alt="tick">
+                                                Your list
+                                            </button>
+                                            <button style="margin-right: 8px;">
+                                                <img src="../img/main-images/anime-popup/like.png">
+                                                Rate
+                                            </button>
+                                            <button>
+                                                <img src="../img/main-images/anime-popup/send.png">
+                                                Share
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <img class="popup-display-img" src="../img/anime-posters/frieren.png" alt="anime card: frieren">
+                                </div>
                             </div>
                         </div>
                         <div class="anime-button-div" x-data="{ open: false }">
@@ -121,7 +149,7 @@
                                 <p class="anime-title">Demon Slayer: Kimetsu no Yaiba</p>
                                 <p class="season-and-eps">S 4 • EPS 8</p>
                             </button>
-                            <div class="anime-card-deets" x-show="open" x-transition>
+                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
                                 Hello 👋
                             </div>
                         </div>
@@ -131,7 +159,7 @@
                                 <p class="anime-title">Attack on Titan: The Final Season</p>
                                 <p class="season-and-eps">S 4 • EPS 30</p>
                             </button>
-                            <div class="anime-card-deets" x-show="open" x-transition>
+                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
                                 Hello 👋
                             </div>
                         </div>
@@ -189,35 +217,54 @@
                                 <p class="anime-title">Frieren: Beyond Journey's End</p>
                                 <p class="season-and-eps">S 1 • EPS 28</p>
                             </button>
-                            <div class="anime-card-deets" x-show="open" x-transition>
+                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
                                 Hello 👋
                             </div>
                         </div>
                         <div class="anime-button-div" x-data="{ open: false }">
-                            <button>
+                            <button @click="open = ! open">
                                 <img src="../img/anime-posters/hunter-hunter.png">
                                 <p class="anime-title">Hunter X Hunter</p>
                                 <p class="season-and-eps">S 1 • EPS 26</p>
                             </button>
-                        <button>
-                            <img src="../img/anime-posters/one-piece.png">
-                            <p class="anime-title">One Piece</p>
-                            <p class="season-and-eps">S 20 • EPS 198</p>
-                        </button>
+                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
+                                Hello 👋
+                            </div>
+                        </div>
+                        <div class="anime-button-div" x-data="{ open: false }">
+                            <button @click="open = ! open">
+                                <img src="../img/anime-posters/one-piece.png">
+                                <p class="anime-title">One Piece</p>
+                                <p class="season-and-eps">S 20 • EPS 198</p>
+                            </button>
+                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
+                                Hello 👋
+                            </div>
+                        </div>
                         <!-- These class = "hidden" buttons will disappear when the screen becomes too small -->
                         <div class="hidden">
-                            <button>
-                                <img src="../img/anime-posters/delicious-in-dungeon.png">
-                                <p class="anime-title">Delicious in Dungeon</p>
-                                <p class="season-and-eps">S 1 • EPS 16</p>
-                            </button>
+                            <div class="anime-button-div" x-data="{ open: false }">
+                                <button @click="open = ! open">
+                                    <img src="../img/anime-posters/delicious-in-dungeon.png">
+                                    <p class="anime-title">Delicious in Dungeon</p>
+                                    <p class="season-and-eps">S 1 • EPS 16</p>
+                                </button>
+                                <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
+                                    Hello 👋
+                                </div>
+                            </div>
                         </div>
                         <div class="hidden">
-                            <button>
-                                <img src="../img/anime-posters/apothecary.png">
-                                <p class="anime-title">The Apothecary Diaries</p>
-                                <p class="season-and-eps">S 1 • EPS 24</p>
-                            </button>
+                            <div class="anime-button-div" x-data="{ open: false }">
+                                <button @click="open = ! open">
+                                    <img src="../img/anime-posters/apothecary.png">
+                                    <p class="anime-title">The Apothecary Diaries</p>
+                                    <p class="season-and-eps">S 1 • EPS 24</p>
+                                </button>
+                                <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
+                                    Hello 👋
+                                </div>
+                            </div>
                         </div>
                     </container>
                 </section>

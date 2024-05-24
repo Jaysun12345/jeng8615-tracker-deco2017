@@ -62,3 +62,9 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+let arrayOfObjects = [
+    { name: "John", age: 30, image: "../img" },
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 40 }
+];
