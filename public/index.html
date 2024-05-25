@@ -189,7 +189,7 @@
                     </div>
                 </section>
                 <!-- Featured -->
-                <section class="featured">
+                <!-- <section class="featured">
                     <container class="sub-headings">
                         <h2>Featured</h2>
                     </container>
@@ -199,7 +199,7 @@
                         <p class="featured-text">The Apothecary Diaries</p>
                         <p class="season-and-eps">S 1 • EPS 24</p>
                     </container>
-                </section>
+                </section> -->
                 <!-- Search -->
                 <section class="search" style="margin-top: 20px;">
                     <container class="sub-headings">
@@ -210,62 +210,7 @@
                         </button>
                     </container>
                     <p class="smaller-grey-text">Popular right now</p>
-                    <container class="anime-cards-layout">
-                        <div class="anime-button-div" x-data="{ open: false }">
-                            <button @click="open = ! open">
-                                <img src="../img/anime-posters/frieren.png">
-                                <p class="anime-title">Frieren: Beyond Journey's End</p>
-                                <p class="season-and-eps">S 1 • EPS 28</p>
-                            </button>
-                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
-                                Hello 👋
-                            </div>
-                        </div>
-                        <div class="anime-button-div" x-data="{ open: false }">
-                            <button @click="open = ! open">
-                                <img src="../img/anime-posters/hunter-hunter.png">
-                                <p class="anime-title">Hunter X Hunter</p>
-                                <p class="season-and-eps">S 1 • EPS 26</p>
-                            </button>
-                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
-                                Hello 👋
-                            </div>
-                        </div>
-                        <div class="anime-button-div" x-data="{ open: false }">
-                            <button @click="open = ! open">
-                                <img src="../img/anime-posters/one-piece.png">
-                                <p class="anime-title">One Piece</p>
-                                <p class="season-and-eps">S 20 • EPS 198</p>
-                            </button>
-                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
-                                Hello 👋
-                            </div>
-                        </div>
-                        <!-- These class = "hidden" buttons will disappear when the screen becomes too small -->
-                        <div class="hidden">
-                            <div class="anime-button-div" x-data="{ open: false }">
-                                <button @click="open = ! open">
-                                    <img src="../img/anime-posters/delicious-in-dungeon.png">
-                                    <p class="anime-title">Delicious in Dungeon</p>
-                                    <p class="season-and-eps">S 1 • EPS 16</p>
-                                </button>
-                                <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
-                                    Hello 👋
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden">
-                            <div class="anime-button-div" x-data="{ open: false }">
-                                <button @click="open = ! open">
-                                    <img src="../img/anime-posters/apothecary.png">
-                                    <p class="anime-title">The Apothecary Diaries</p>
-                                    <p class="season-and-eps">S 1 • EPS 24</p>
-                                </button>
-                                <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
-                                    Hello 👋
-                                </div>
-                            </div>
-                        </div>
+                    <container class="anime-cards">
                     </container>
                 </section>
             </main>
