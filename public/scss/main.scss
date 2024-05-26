@@ -19,59 +19,149 @@ h1 {
     margin-left: 20px;
 }
 
-.anime-button-div {
+// .anime-button-div {
+//     .anime-card-deet {
+//         height: 80%;
+//         position: fixed;
+//         background-color: white;
+//         border: 2px solid #c4c4c4;
+//         border-radius: 20px;
+//         z-index: 3;
+//         padding: 30px;
+//         .exit-button {
+//             width: 50px;
+//             margin-bottom: 10px;
+//         }
+//         .popup-anime-title-and-image {
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: flex-start;
+//             gap: 40px;
+//         }
+//         .anime-main-text {
+//             .anime-title {
+//                 font-family: "Merge One", sans-serif;
+//                 font-size: 30px;
+//                 line-height: 35px;
+//             }
+//             .year-and-season {
+//                 color: #646464;
+//             }
+//             .anime-description {
+//                 font-size: 13px;
+//                 color: #646464;
+//             }
+//             .anime-card-genres img {
+//                 height: 40px;
+//             }
+//         }
+//         .popup-display-img {
+//             width: 150px;
+//         }
+//         .action-bar {
+//             display: flex;
+//             gap: 40px;
+//             margin-top: 20px;
+//             button {
+//                 display: flex;
+//                 align-items: center;
+//             }
+//             img {
+//                 width: 30px;
+//             }
+//         }
+//     }
+// }
 
-    .anime-card-deets {
-        height: 80%;
-        position: fixed;
-        background-color: white;
-        border: 2px solid #c4c4c4;
-        border-radius: 20px;
-        z-index: 3;
-        padding: 30px;
-        .exit-button {
-            width: 50px;
-            margin-bottom: 10px;
-        }
-        .popup-anime-title-and-image {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 40px;
-        }
-        .anime-main-text {
-            .anime-title {
+.popup {
+    display: none;
+    position: fixed;
+    width: 70%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 1000;
+    //These are the desktop styles for the pop-up
+    .popup-intro-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .popup-info {
+            width: 650px;
+            h2 {
                 font-family: "Merge One", sans-serif;
                 font-size: 30px;
-                line-height: 35px;
-            }
-            .year-and-season {
-                color: #646464;
+            } 
+            p {
+                margin-bottom: 5px;
             }
             .anime-description {
-                font-size: 13px;
-                color: #646464;
+                font-size: 12px;
             }
-            .anime-card-genres img {
-                height: 40px;
+            img { //category tags
+                height: 45px;
+                gap: 5px;
+                margin-bottom: 5px;
             }
-        }
-        .popup-display-img {
-            width: 150px;
-        }
-        .action-bar {
-            display: flex;
-            gap: 40px;
-            margin-top: 20px;
-            button {
+            button { //add or remove from ViewVault
+                background-color: white;
+                border: none;
                 display: flex;
                 align-items: center;
-            }
-            img {
-                width: 30px;
+                img {
+                    margin-top: 10px;
+                    height : 33px;
+                }
+                span {
+                    margin-left: 10px;
+                    padding-top: 8px;
+                }
             }
         }
+        .popup-display-image {
+                width: 150px;
+                margin-left: 15px;
+                border-radius: 12px;
+                box-shadow: 2px 2px 8px #959595;
+        }
     }
+    .add-to-watchlist {
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: white;
+        margin-top: 5px;
+        img {
+            width: 34px;
+        }
+        span {
+            padding-top: 4px;
+            font-size: 15px;
+            margin-left: 10px;
+        }
+    }
+    .close-popup {
+        img {
+            width: 30px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
 }
 
 //Desktop layout
@@ -79,50 +169,9 @@ h1 {
     header, .mobile-nav {
         display: none;
     }
-    // html body {
-    //     background-color: #EEEEEE;
-    // }
-    nav {
-        width: 80%;
-        position: sticky;
-        top: 30;
-        margin-top: 30px;
-        margin-left: 55px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 40px;
-        padding-bottom: 40px;
-        gap: 40px;
-        border-radius: 40px;
-        background-color: #f1f1f1;
-        button {
-            background-color: #f1f1f1;
-            border: none;
-            width: 50px;
-        }
-        .view-vault-icon {
-            font-size: 20px;
-            font-weight: 800;
-            margin-left: -20px;
-            color: #9671FF;
-            line-height: 22px;
-            margin-bottom: 40px;
-        }
-        .add-button {
-            height: 50px;
-            margin-left: -5px;
-        }
-        img {
-            height: 20px;
-        }
-        .settings-sidenav {
-            margin-top: 80px;
-        }
-    }
     main {
         background-color: white;
-        padding: 20px 40px 20px 40px;
+        padding: 20px 40px 20px 60px;
         margin-top: 30px;
         margin-bottom: 40px;
         margin-left: 10px;
@@ -130,19 +179,46 @@ h1 {
         h2 {
             font-size: 23px;
         }
-        .desktop-location-text {
+        .desktop-header-section {
             display: flex;
             align-items: end;
             justify-content: space-between;
             margin-bottom: 10px;
             font-weight: 500;
             img {
-                width: 35px;
+                width: 45px;
             }
             .profile-button {
                 border: none;
                 border-radius: 120%;
                 background-color: white;
+            }
+            .dropdown-arrow {
+                width: 15px;
+                margin-right: 5px;
+            }
+            #login {
+            position: fixed;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            z-index: 1000;    
+            margin-top: 10px;
+            margin-left: -160px;
+            padding: 20px;
+                .form-label {
+                    font-weight: 500;
+                }
+                button {
+                    border: none;
+                    border-radius: 10px;
+                    padding: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;;
+                    font-weight: 500;
+                    color: #9671FF;
+                }
             }
         }
         .good-afternoon-section {
@@ -176,9 +252,9 @@ h1 {
             align-items: flex-start;
             margin-top: 2px;
             margin-bottom: 20px;
-            font-size: 12px;
+            font-size: 15px;
             img {
-                width: 16px;
+                width: 20px;
                 margin-right: 7px;
             }
             #date-container {
@@ -203,17 +279,12 @@ h1 {
                 }
             }
         }
-        .anime-card-deets {
-            width: 60%;
-            top: 10%;
-            left: 20%;
-        }
-        .anime-cards-layout {
+        .anime-cards-layout, .anime-search-cards, .view-vault-cards {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             button {
-                width: 110px;
+                width: 150px;
                 background-color: white;
                 border: none;
                 padding: 0px;
@@ -226,7 +297,7 @@ h1 {
                 p {
                     font-family: "Merge One", sans-serif;
                     text-align: left;
-                    font-size: 11px;
+                    font-size: 15px;
                     line-height: 120%;
                 }
                 .season-and-eps {
@@ -276,7 +347,7 @@ h1 {
         width: 95%;
         display: flex;
         flex-direction: column;
-        padding: 20px 20px 20px 20px;
+        padding: 20px 0px 20px 20px;
         margin: 30px 0px 40px -10px;
         border-radius: 20px;
         .aside-profilepic{
@@ -307,7 +378,7 @@ h1 {
                 }
             }
         }
-        .anime-cards-layout, .anime-cards {
+        .anime-cards-layout {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
@@ -365,7 +436,7 @@ h1 {
 
 //Want the naruto character to disappear earlier
 @media (max-width: 860px) {
-    .hidden .chibi-naruto, .popup-display-img {
+    .hidden .chibi-naruto {
         display: none;
     }
 }
@@ -379,7 +450,7 @@ h1 {
 
 //Mobile layout
 @media (max-width: 768px) {
-    nav, aside, .hidden {
+    aside, .hidden {
         display: none;
     }
     header {
@@ -392,35 +463,6 @@ h1 {
         justify-content: space-around;
         img {
             width: 50px;
-        }
-        .dropdown-arrow {
-            width: 20px;
-        }
-        .profile-button {
-            border: none;
-            border-radius: 120%;
-            background-color: #9671FF;
-        }
-        #login {
-            position: absolute;
-            margin-top: 30px;
-            margin-left: -120px;
-            background-color: white;
-            border: 2px solid #E6E6E6;
-            border-radius: 15px;
-            padding: 20px;
-            .form-label {
-                font-weight: 500;
-            }
-            button {
-                border: none;
-                border-radius: 10px;
-                padding: 5px;
-                padding-left: 10px;
-                padding-right: 10px;;
-                font-weight: 500;
-                color: #9671FF;
-            }
         }
     }
     .mobile-nav {

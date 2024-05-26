@@ -32,56 +32,28 @@
                 <img src="../img/main-images/settings-button.png">
                 <h2 class="header-headings">Home</h2>
                 <!-- profile picture -->
-                <div x-data="{ isOpen: false }">
-                    <button class = "profile-button" @click="isOpen = !isOpen" @keydown.escape="isOpen = false">
-                        <img class="dropdown-arrow" src="../img/home-page/dropdown-arrow.png">
-                        <img src="../img/main-images/profile-pic.png">
-                    </button>
-                    <div x-show="isOpen" @click.away="isOpen = false" id="login"> 
-                    <!-- This is the login section, when users login, their name will pop up on the main page -->
-                        <div class="mb-3">
-                            <label class="form-label">Username</label><br>
-                            <input id="input-name" type="text" placeholder="Type here">
-                        </div>
-                        <button onclick="returnName()">Login</button>
-                    </div>
-                </div>
+                <img src="../img/main-images/profile-pic.png">
             </header>
         </div>
-        <!-- NAVIGATION ONLY ON DESKTOP -->
-        <div class="col-0 col-md-2">
-            <nav>
-                <button class="view-vault-icon">
-                    View Vault
-                </button>
-                <button>
-                    <img src="../img/home-page/home-active.png">
-                </button>
-                <button>
-                    <img src="../img/main-images/search-icon.png">
-                </button>
-                <button>
-                    <img class="add-button" src="../img/main-images/add-button.png">
-                </button>
-                <button>
-                    <img src="../img/main-images/clock-icon.png">
-                </button>
-                <button>
-                    <img src="../img/main-images/profile-icon.png">
-                </button>
-                <img class="settings-sidenav" src="../img/main-images/settings-navbar.png">   
-            </nav>
-        </div>
         <!-- MAIN -->
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-md-8">
             <main>
                 <div class="hidden">
-                    <section class="desktop-location-text">
-                        Home
+                    <section class="desktop-header-section">
+                        <img src="../img/main-images/settings-button.png" alt="settings cog button">
                         <div x-data="{ isOpen: false }">
                             <button class = "profile-button" @click="isOpen = !isOpen" @keydown.escape="isOpen = false">
-                                <img src="../img/main-images/profile-pic.png">
+                                <img class="dropdown-arrow" src="../img/home-page/arrow-down-white.png" alt="dropdown arrow">
+                                <img src="../img/main-images/profile-pic.png" alt="emoji profile picture">
                             </button>
+                            <div x-show="isOpen" @click.away="isOpen = false" id="login"> 
+                            <!-- This is the login section, when users login, their name will pop up on the main page -->
+                                <div class="mb-3">
+                                    <label class="form-label">Username</label><br>
+                                    <input id="input-name" type="text" placeholder="Type here">
+                                </div>
+                                <button onclick="returnName()">Login</button>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -99,78 +71,12 @@
                         <img class="chibi-naruto" src="../img/home-page/naruto-chibi.png">
                     </div>
                 </div>
-                <!-- Newly Released -->
-                <section class="newly-released">
+                <!-- Your ViewVault -->
+                <section class="your-viewvault">
                     <container class="sub-headings">
-                        <h2 style="margin-bottom: 15px;">Newly Released</h2>
+                        <h2 style="margin-bottom: 15px;">Your ViewVault</h2>
                     </container>
-                    <container class="anime-cards-layout">
-                        <div class="anime-button-div" x-data="{ open: false }">
-                            <button @click="open = ! open">
-                                <img src="../img/anime-posters/frieren.png">
-                                <p class="anime-title">Frieren: Beyond Journey's End</p>
-                                <p class="season-and-eps">S 1 • EPS 28</p>
-                            </button>
-                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
-                                <button>
-                                    <img class="exit-button" @click="open = false" src="../img/main-images/anime-popup/exit-button.png" alt="exit button">
-                                </button>
-                                <div class="popup-anime-title-and-image">
-                                    <div class="anime-main-text">
-                                        <p class="anime-title">Frieren: Beyond Journey's End</p>
-                                        <p class="year-and-season">2023 • Season 1</p>
-                                        <p class="anime-description">An elf and her friends defeat a demon king in a great war; but the war is over, and the elf must search for a new way of life.</p>
-                                        <div class="anime-card-genres">
-                                            <img src="../img/search-page/Fantasy.png" alt="fantasy icon">
-                                            <img src="../img/search-page/Adventure.png" alt="adventure icon">
-                                        </div>
-                                        <div class="action-bar">
-                                            <button>
-                                                <img src="../img/main-images/anime-popup/tick-circle.png" alt="tick">
-                                                Your list
-                                            </button>
-                                            <button style="margin-right: 8px;">
-                                                <img src="../img/main-images/anime-popup/like.png">
-                                                Rate
-                                            </button>
-                                            <button>
-                                                <img src="../img/main-images/anime-popup/send.png">
-                                                Share
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <img class="popup-display-img" src="../img/anime-posters/frieren.png" alt="anime card: frieren">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="anime-button-div" x-data="{ open: false }">
-                            <button @click="open = ! open">
-                                <img src="../img/anime-posters/demon-slayer.png">
-                                <p class="anime-title">Demon Slayer: Kimetsu no Yaiba</p>
-                                <p class="season-and-eps">S 4 • EPS 8</p>
-                            </button>
-                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
-                                Hello 👋
-                            </div>
-                        </div>
-                        <div class="anime-button-div" x-data="{ open: false }">
-                            <button @click="open = ! open">
-                                <img src="../img/anime-posters/attack-on-titans.png">
-                                <p class="anime-title">Attack on Titan: The Final Season</p>
-                                <p class="season-and-eps">S 4 • EPS 30</p>
-                            </button>
-                            <div class="anime-card-deets" x-show="open" @click.away="open = false" x-transition>
-                                Hello 👋
-                            </div>
-                        </div>
-                        <!-- This hidden anime card will disappear when the screen becomes too small -->
-                        <div class="hidden">
-                            <button>
-                                <img src="../img/anime-posters/jujutsu-kaisen.png">
-                                <p class="anime-title">Jujutsu Kaisen</p>
-                                <p class="season-and-eps">S 2 • EPS 23</p>
-                            </button>
-                        </div>
+                    <container class="view-vault-cards">
                     </container>
                 </section>
                 <!-- Your Screentime -->
@@ -209,14 +115,18 @@
                             <img src="../img/main-images/see-more-icon.png">
                         </button>
                     </container>
-                    <p class="smaller-grey-text">Popular right now</p>
-                    <container class="anime-cards">
-                    </container>
+                    <p class="smaller-grey-text">Some anime you might like</p>
+                    <container class="anime-search-cards"></container>
+                    <div class="overlay"></div>
+                    <div class="popup">
+                        <span class="close-popup"><img src="../img/main-images/anime-popup/exit-button.png"></span>
+                        <div class="popup-intro-content"></div>
+                    </div>
                 </section>
             </main>
         </div>
         <!-- ASIDE ONLY ON DESKTOP -->
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-4">
             <aside>
                 <p style="font-weight: 500;">
                     Your Profile
