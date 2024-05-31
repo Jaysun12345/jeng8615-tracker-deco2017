@@ -19,65 +19,11 @@ h1 {
     margin-left: 20px;
 }
 
-// .anime-button-div {
-//     .anime-card-deet {
-//         height: 80%;
-//         position: fixed;
-//         background-color: white;
-//         border: 2px solid #c4c4c4;
-//         border-radius: 20px;
-//         z-index: 3;
-//         padding: 30px;
-//         .exit-button {
-//             width: 50px;
-//             margin-bottom: 10px;
-//         }
-//         .popup-anime-title-and-image {
-//             display: flex;
-//             justify-content: space-between;
-//             align-items: flex-start;
-//             gap: 40px;
-//         }
-//         .anime-main-text {
-//             .anime-title {
-//                 font-family: "Merge One", sans-serif;
-//                 font-size: 30px;
-//                 line-height: 35px;
-//             }
-//             .year-and-season {
-//                 color: #646464;
-//             }
-//             .anime-description {
-//                 font-size: 13px;
-//                 color: #646464;
-//             }
-//             .anime-card-genres img {
-//                 height: 40px;
-//             }
-//         }
-//         .popup-display-img {
-//             width: 150px;
-//         }
-//         .action-bar {
-//             display: flex;
-//             gap: 40px;
-//             margin-top: 20px;
-//             button {
-//                 display: flex;
-//                 align-items: center;
-//             }
-//             img {
-//                 width: 30px;
-//             }
-//         }
-//     }
-// }
-
 .popup {
     display: none;
     position: fixed;
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -86,6 +32,10 @@ h1 {
     border-radius: 10px;
     background-color: #fff;
     z-index: 1000;
+    .exit-button {
+        width: 40px;
+        margin-bottom: 10px;
+    }
     //These are the desktop styles for the pop-up
     .popup-intro-content {
         display: flex;
@@ -108,17 +58,19 @@ h1 {
                 gap: 5px;
                 margin-bottom: 5px;
             }
-            button { //add or remove from ViewVault
+            .add-to-watchlist { //add or remove from ViewVault
+                display: flex;
+                flex-direction: row;
                 background-color: white;
                 border: none;
-                display: flex;
-                align-items: center;
+                width: 190px;
                 img {
                     margin-top: 10px;
                     height : 33px;
+                    margin-right: 8px;
                 }
                 span {
-                    margin-left: 10px;
+                    margin-left: 5px;
                     padding-top: 8px;
                 }
             }
@@ -127,7 +79,7 @@ h1 {
                 width: 170px;
                 margin-left: 15px;
                 margin-right: 5%;
-                border-radius: 12px;
+                border-radius: 17px;
                 box-shadow: 2px 2px 8px #959595;
         }
     }
@@ -152,6 +104,55 @@ h1 {
             margin-bottom: 10px;
         }
     }
+    .popupEps {
+        margin-top: 15px;
+        padding-right: 5%;
+        .episodesAndWatched {
+            display: flex;
+            justify-content: space-between;
+        }
+        .episode-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 3%;
+            .ep-section {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                .ep-information {
+                    margin-left: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: -10px;
+                }
+                .ep-title {
+                    font-size: 20px;
+                }
+                p {
+                    width: 90%;
+                    margin-bottom: 0.5%;
+                }
+                .ep-description {
+                    font-size: 10px;
+                }
+            }
+        }
+        img {
+            width: 120px;
+            border: 2px solid #a1a1a1;
+            border-radius: 10px;
+        }
+    }
+    .load-more {
+        display: flex;
+        gap: 10px;
+        margin-left: 35px;
+        img {
+            margin-top: 6px;
+            height: 12px;
+        }
+    }
 }
 
 .overlay {
@@ -165,6 +166,50 @@ h1 {
     z-index: 999;
 }
 
+// Controls the category tag filters
+.category-filters {
+    margin-bottom: 20px;
+    img {
+        height: 50px;
+        margin-bottom: 5px;
+        border-radius: 25px;
+    }
+    input[tyoe="radio"] {
+        opacity: 0.01;
+        z-index: 100;;
+    }
+    label {
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        cursor: pointer;
+    }
+    input {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    input[type="radio"] {
+        z-index: 100;
+        display: none;
+    }
+    input[type="radio"]:checked+img { // Checked state
+        box-shadow: 2px 3px 5px 1px #cfcfcf;
+        margin-right: 5px;
+        margin-bottom: 9px;
+        transform: scale(1.06);
+        border-radius: 30px;
+      }
+    img:hover { // Hover state
+        transform: scale(1.05);
+        position: relative;
+        margin-bottom: 5px;
+    }
+}
+
 //Desktop layout
 @media (min-width: 768px) {
     header, .mobile-nav {
@@ -172,7 +217,7 @@ h1 {
     }
     main {
         background-color: white;
-        padding: 20px 40px 20px 60px;
+        padding: 20px 40px 20px 40px;
         margin-top: 30px;
         margin-bottom: 40px;
         margin-left: 10px;
@@ -243,10 +288,11 @@ h1 {
                 display: none;
             }
         }
-        .smaller-grey-text {
+        .smaller-grey-text { //text under each subheading
             color: #646464;
             font-size: 13px;
-            margin-top: -18px;
+            margin-top: -16px;
+            margin-bottom: 5px;
         }
         .calendar-line {
             display: flex;
@@ -284,8 +330,9 @@ h1 {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            position: relative;
             button {
-                width: 150px;
+                width: 170px;
                 background-color: white;
                 border: none;
                 padding: 0px;
@@ -322,26 +369,15 @@ h1 {
                 justify-content: space-between;
             }
         }
-        .featured {
-            .featured-container {
-                margin-bottom: 7%;
-                .featured-text {
-                    font-family: "Merge One", sans-serif;
-                    font-size: 30px;
-                    margin-top: 3px;
-                }
-                .season-and-eps {
-                    color: #646464;
-                    margin-top: -17;
-                }
-            }
-            img {
-                width: 100%;
-                border-radius: 20px;
-                border: 2px solid #646464;
+        .search-container {
+            input {
+                width: 50%;
+                border: 1.5px solid #959595;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                padding-left: 10px;
             }
         }
-
     }
     aside {
         background-color: white;
@@ -352,7 +388,7 @@ h1 {
         margin: 30px 0px 40px -10px;
         border-radius: 20px;
         .aside-profilepic{
-            width: 120px;
+            width: 140px;
             align-self: center;
             margin-top: 20px;
             margin-bottom: 15px;
@@ -435,9 +471,9 @@ h1 {
     }
 }
 
-//Want the naruto character to disappear earlier
+//Want the naruto character and anime episode descriptions to disappear earlier
 @media (max-width: 860px) {
-    .hidden .chibi-naruto {
+    .hidden .chibi-naruto, .ep-description {
         display: none;
     }
 }
