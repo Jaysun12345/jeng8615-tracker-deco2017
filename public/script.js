@@ -138,7 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let animeCards = document.querySelector(".anime-search-cards");
     let viewVault = document.querySelector(".view-vault-cards");
 
-    // let viewVaultArray = JSON.parse(localStorage.getItem("viewVaultArray")) || [];
+    // Retrieve the stored view vault cards from localStorage
+    viewVault.innerHTML = localStorage.getItem("viewVaultCards") || "";
 
     // Function to display anime cards
     function displayAnimeCards(animeList) {
@@ -147,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Creating the cards for each anime 
             let card = document.createElement("div");
             card.setAttribute("class", "anime-button-div");
+            card.setAttribute("data-anime-id", anime.id) // Setting each anime card with their own id
 
             // Each anime card is a button that has the image, title, season, and eps within it
             let button = document.createElement("button");
@@ -190,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Populate popup content
             popupIntroContent.innerHTML = `
-                <div class="popup-info">
+                <div id="${anime.id}-popup" class="popup-info">
                     <h2>${anime.title}</h2>
                     <p style="font-size: 18px;">${anime.year}</p>
                     <p>${anime.seasonAndEps}</p>
@@ -199,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${anime.categoryTag1}" alt="Category Tag 1"/>
                         <img src="${anime.categoryTag2}" alt="Category Tag 2"/>         
                     </div>
-                    <button class="add-to-watchlist">
+                    <button class="add-to-watchlist" data-anime-id="${anime.id}">
                         <img class="add-button" src="https://live.staticflickr.com/65535/53754160146_b10bb221c6_s.jpg" alt="plus symbol"/>
                         <span>Add to ViewVault</span>
                     </button>
@@ -249,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let exitButton = new Image();
             exitButton.src = "https://live.staticflickr.com/65535/53754577185_53e54741e3_s.jpg";
             exitButton.setAttribute("class", "exit-button");
-            exitButton.addEventListener("click", function (event) {
+            exitButton.addEventListener("click", function(event) {
                 event.stopPropagation(); // Prevent triggering the card click event
                 popup.style.display = "none";
                 overlay.style.display = "none";
@@ -281,29 +283,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 overlay.style.display = "none";
             });
             animeCards.appendChild(card);
-
-            // const addToViewVault = document.querySelector(".add-to-watchlist");
-            // addToViewVault.addEventListener("click", function() {
-            //     // Check if the item doesn't exist in localStorage by seeing if it is null
-            //     if (viewVaultArray == null){
-            //     // In which case, use the current country name to create an array
-            //     viewVaultArray = [anime];
-            //     } else {
-            //         // Otherwise check if the country is already in the favourites array
-            //         if (viewVaultArray.find(element => element === anime)){
-            //             console.log('Already exists')
-            //         } else {
-            //         // If it's not in the array already, push it into the array
-            //         viewVaultArray.push(anime)
-            //      }
-            //     }
-            // console.log(viewVaultArray)
-            // localStorage.setItem('viewVaultArray', (viewVaultArray))
-            // });
+        });
+    }
+    
+    displayAnimeCards(animeList); // Initial display of all anime cards
+    
+    // When the "Add to ViewVault" button is clicked, anime card is added to ViewVault
+    const addToViewVault = document.querySelectorAll(".add-to-watchlist");
+    for (let button of addToViewVault) {
+        button.addEventListener("click", function(event) {
+            let animeId = event.currentTarget.dataset.animeId; // Identifying each card by their id and appending it to ViewVault
+            let popupCard = document.querySelector(`[data-anime-id="${animeId}"].anime-button-div`);
+            viewVault.appendChild(popupCard);
+            localStorage.setItem("viewVaultCards", viewVault.innerHTML);
         });
     }
 
-    displayAnimeCards(animeList); // Initial display of all anime cards
+    // When the page is loaded, popup and overlay are display = none
+    let popup = document.querySelectorAll(".popup");
+    let overlay = document.querySelectorAll(".overlay");
+    popup.forEach(function(el) {
+        el.style.display = "none";
+    })
+    overlay.forEach(function(el) {
+        el.style.display = "none";
+    });
+    // When the exit button is clicked on each popup, the popup and overlay disappears
+    let exitButton = document.querySelectorAll(".exit-button");
+    for (let button of exitButton) {
+        button.addEventListener("click", function(event) {
+            popup.forEach(function(el) {
+                el.style.display = "none";
+            })
+            overlay.forEach(function(el) {
+                el.style.display = "none";
+            });
+            let allAnime = document.querySelectorAll(".anime-button-div")
+            allAnime.addEventListener("click", function(event) {
+                popup.forEach(function(el) {
+                    el.style.display = "block";
+                })
+                overlay.forEach(function(el) {
+                    el.style.display = "block";
+                });
+                console.log("clicked");
+            })
+        });
+    }
+
 
     // Search bar code
     const searchBar = document.getElementById('search-bar');
