@@ -1,12 +1,16 @@
 // Adjusting username when profile picture is clicked and login dropdown is displayed 
 function returnName() {
     let inputtedName = document.getElementById("input-name").value;
-    if (inputtedName === "") {
-        document.getElementById("default-name").innerText = ", ViewVaulter!";
-    } else {
+    // If no name is inputted
+    if (inputtedName === "") { 
+        // Display this
+        document.getElementById("default-name").innerText = ", ViewVaulter!"; 
+    } else { 
+        // Otherwise display the inputted name
         document.getElementById("default-name").innerText = ", " + inputtedName;
         document.getElementById("profile-name").innerText = inputtedName;
     }
+    // Store the name so on reload, stays logged in
     localStorage.setItem("name", inputtedName);
     document.getElementById("login").style.display = "none";
 }
@@ -34,11 +38,9 @@ const dateDisplay = document.getElementById("date-container");
 dateDisplay.innerHTML = getCurrentDateAndTime();
 
 // Establishing today's screentime
-// let todayScreentime = localStorage.getItem("todayScreentime", todayScreentime) || 0;
-// let todayScreentime = 0;
 let todayScreentime = parseInt(localStorage.getItem("todayScreentime")) || 0;
 
-// Making the bar graph 
+// Making the bar graph gotten from chat.js
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -83,7 +85,7 @@ let animeList = [
         alt: "Frieren",
         ep1Title: "Ep 1: The Journey's End",
         ep1Image: "https://live.staticflickr.com/65535/53754846765_be34476144_c.jpg",
-        ep1Length: 25,
+        ep1Length: 24,
         ep1Description: "The world celebrates the Demon King's defeat at the hands of the Hero and his companions. Now that their great adventure is over, what will Frieren the mage do next?",
         ep2Title: "Ep 2: It Didn't Have to be Magic",
         ep2Image: "https://live.staticflickr.com/65535/53754756524_6e63a63f1a.jpg",
@@ -195,6 +197,132 @@ let animeList = [
         ep2Length: 23,
         ep2Description: "Maomao, who became the High Consort Gyokuyou's pharmaceutical attendant and poison tester, is tasked by Jinshi to create an unusual medicine."
     },
+    {
+        id: 7,
+        title: "One Piece",
+        year: "1999",
+        seasonAndEps: "S 1 • EPS 90",
+        category1: "Fantasy",
+        category2: "Adventure",
+        description: "The story follows the adventures of Monkey D. Luffy, a boy whose body gained the properties of rubber after unintentionally eating a Devil Fruit.",
+        categoryTag1: "https://live.staticflickr.com/65535/53754482194_6493806959.jpg",
+        categoryTag2: "https://live.staticflickr.com/65535/53754349228_5e1db76bb2.jpg",
+        image: "https://live.staticflickr.com/65535/53767445897_3186376179_n.jpg",
+        alt: "One piece",
+        ep1Title: "Ep 1: I'm Luffy! The Man Who Will Become the Pirate King!",
+        ep1Image: "https://live.staticflickr.com/65535/53768737816_a56fa42726_c.jpg",
+        ep1Length: 24,
+        ep1Description: "Luffy is found floating at sea by a cruise ship. After repelling an invasion by the Alvida Pirates, he meets a new ally, their chore boy Koby.",
+        ep2Title: "Ep 2: The Great Swordsman Appears! Pirate Hunter Roronoa Zoro",
+        ep2Image: "https://live.staticflickr.com/65535/53767825757_15971b7a10.jpg",
+        ep2Length: 24,
+        ep2Description: "Luffy and Koby find Zoro captured in Shells Town's Marine base, with the Marines intending to execute him."
+    },
+    {
+        id: 8,
+        title: "Spy X Family",
+        year: "2022",
+        seasonAndEps: "S 1 • EPS 28",
+        category1: "Comedy",
+        category2: "Drama",
+        description: "Agent Twilight, the greatest spy of the nation of Westalis, assembles a fake family in order to infiltrate an elite private school, not realizing he recruited a psychic child and a legendary assassin also in need of a cover family.",
+        categoryTag1: "https://live.staticflickr.com/65535/53754349183_e0ee3af035.jpg",
+        categoryTag2: "https://live.staticflickr.com/65535/53754482204_3f60e2d93f_w.jpg",
+        image: "https://live.staticflickr.com/65535/53768773860_bd0abf2d79_w.jpg",
+        alt: "Spy x family",
+        ep1Title: "Ep 1: Operation Strix",
+        ep1Image: "https://live.staticflickr.com/65535/53769159405_c0ffd48373_c.jpg",
+        ep1Length: 24,
+        ep1Description: "Twilight is an agent that works for WISE, Westalis's intelligence agency; he is tasked with investigating Desmond of Ostania; Twilight disguises himself as Loid Forger and adopts a girl named Anya.",
+        ep2Title: "Ep 2: Secure a Wife",
+        ep2Image: "https://live.staticflickr.com/65535/53768934333_e5bf12dc77_c.jpg",
+        ep2Length: 24,
+        ep2Description: "Loid needs someone to act as Anya's mum for an interview at the college, so he looks for a wife; civil servant Yor Briar has a secret identity."
+    },
+    {
+        id: 9,
+        title: "The Promised Neverland",
+        year: "2019",
+        seasonAndEps: "S 1 • EPS 12",
+        category1: "Scifi",
+        category2: "Horror",
+        description: "Emma and Norman reside in an orphanage under Isabella's care. However, they discover that it is a breeding ground for them to become food for demons and try to escape their fate.",
+        categoryTag1: "https://live.staticflickr.com/65535/53754157026_1258fa9894_w.jpg",
+        categoryTag2: "https://live.staticflickr.com/65535/53754574040_e1aba4b8e8_w.jpg",
+        image: "https://live.staticflickr.com/65535/53768967953_ee613ace62_w.jpg",
+        alt: "The promised neverland",
+        ep1Title: "Ep 1: 121045",
+        ep1Image: "https://live.staticflickr.com/65535/53768968038_9791eceb58_c.jpg",
+        ep1Length: 21,
+        ep1Description: "While attempting to return a stuffed animal to a fellow orphan who left for a new home, Emma and Norman stumble upon a shocking revelation that changes their view of their orphanage and their caretaker, Isabella.",
+        ep2Title: "Ep 2: 131045",
+        ep2Image: "https://live.staticflickr.com/65535/53769192530_1782701752_c.jpg",
+        ep2Length: 21,
+        ep2Description: "Emma and Norman look for a way to escape the orphanage as they learn more about Mom and become suspicious of her behavior and actions."
+    },
+    {
+        id: 10,
+        title: "Fruits Basket",
+        year: "2001",
+        seasonAndEps: "S 1 • EPS 26",
+        category1: "Romance",
+        category2: "Comedy",
+        description: "While living with the Somas, Tohru learns about their connection to the animals of the Chinese Zodiac. As she grows closer to the clan, she strives to unearth the secret of their curse and free them.",
+        categoryTag1: "https://live.staticflickr.com/65535/53754574045_995985e51a.jpg",
+        categoryTag2: "https://live.staticflickr.com/65535/53754349183_e0ee3af035.jpg",
+        image: "https://live.staticflickr.com/65535/53769099379_d81dc4e2e0_w.jpg",
+        alt: "Fruits basket anime",
+        ep1Title: "Ep 1: The Strangest Day",
+        ep1Image: "https://live.staticflickr.com/65535/53767859337_ee6a6650e0_c.jpg",
+        ep1Length: 23,
+        ep1Description: "While her Grandfather's house is under construction, Tohru Honda decides to live in a tent in the woods.",
+        ep2Title: "Ep 2: The Sohma Curse",
+        ep2Image: "https://live.staticflickr.com/65535/53769099409_8ac158518c_c.jpg",
+        ep2Length: 23,
+        ep2Description: "Tohru learns about the Sohma family curse after only one night of staying with them."
+    },
+    {
+        id: 11,
+        title: "No Game No Life",
+        year: "2014",
+        seasonAndEps: "S 1 • EPS 12",
+        category1: "Fantasy",
+        category2: "Scifi",
+        description: "Online gamer siblings are thrust into a new realm where they must play to take over the world.",
+        categoryTag1: "https://live.staticflickr.com/65535/53754482194_6493806959.jpg",
+        categoryTag2: "https://live.staticflickr.com/65535/53754157026_1258fa9894_w.jpg",
+        image: "https://live.staticflickr.com/65535/53769099459_ffbcc8d852_w.jpg",
+        alt: "No game no life anime",
+        ep1Title: "Ep 1: Beginner",
+        ep1Image: "https://live.staticflickr.com/65535/53770884280_09499f8455_z.jpg",
+        ep1Length: 23,
+        ep1Description: "Sora and Shiro, a pair of anti-social NEET gamers, suddenly find themselves in a new world where games decide every facet of life, something that they take to immediately.",
+        ep2Title: "Ep 2: Challenger",
+        ep2Image: "https://live.staticflickr.com/65535/53770464501_2d91fc8432.jpg",
+        ep2Length: 23,
+        ep2Description: "Sora and Shiro's new friend Steph makes a foolish bet that ends with Sora the victor; as the new king of Elkia is crowned, Steph details the fall of the Imanity race and her desperate struggle to prove her father, the former king, right."
+    },
+    {
+        id: 12,
+        title: "Vampire Night",
+        year: "2008",
+        seasonAndEps: "S 2 • EPS 13",
+        category1: "Romance",
+        category2: "Horror",
+        description: "Yuki's oldest memory is that of a winter night, when she was attacked by a vampire and rescued by another. Ten years later, Yuki, the adopted daughter of the director of the Cross Academy, has grown up and now acts as a guardian of the Day Class.",
+        categoryTag1: "https://live.staticflickr.com/65535/53754574045_995985e51a.jpg",
+        categoryTag2: "https://live.staticflickr.com/65535/53754574040_e1aba4b8e8_w.jpg",
+        image: "https://live.staticflickr.com/65535/53770464531_369dc37373_w.jpg",
+        alt: "Vampire night",
+        ep1Title: "Ep 1: Burden of Sinners",
+        ep1Image: "https://live.staticflickr.com/65535/53770464516_97f7e0ec46.jpg",
+        ep1Length: 23,
+        ep1Description: "After the death of Shizuka Hio, peace returns to the academy. However, when Zero returns, the vampires of the Senate label him as a murderer.",
+        ep2Title: "Ep 2: The Eternal Promise",
+        ep2Image: "https://live.staticflickr.com/65535/53770668708_ab1a296789_z.jpg",
+        ep2Length: 23,
+        ep2Description: "Yuki has a lot on her mind after Zero almost kisses her; she asserts that she will not speak to Kaname until he admits to Zero's innocence; Yuki and Sayori find a lost boy."
+    }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -295,7 +423,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p class="ep-description">${anime.ep1Description}</p>
                             </span>
                         </div>
-                        <input type="checkbox" class="watchedCheckbox" data-anime-id="${anime.id}" data-episode="1" value="${anime.ep1Length}">
+                        <label class="container">
+                            <input type="checkbox" class="watchedCheckbox" data-anime-id="${anime.id}" data-episode="1" value="${anime.ep1Length}">
+                            <span class="checkmark"></span>
+                        </label>
                     </container>
                     <container class="episode-container">
                         <div class="ep-section">
@@ -306,7 +437,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p class="ep-description">${anime.ep2Description}</p>
                             </span>
                         </div>
-                        <input type="checkbox" class="watchedCheckbox" data-anime-id="${anime.id}" data-episode="2" value="${anime.ep2Length}">
+                        <label class="container">
+                            <input type="checkbox" class="watchedCheckbox" data-anime-id="${anime.id}" data-episode="2" value="${anime.ep2Length}">
+                            <span class="checkmark"></span>
+                        </label>
                     </container>
                 </div>
                 <div class="load-more">
@@ -354,6 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to attach event listeners to anime cards
     function attachCardListeners() {
+        // Finding all anime cards 
         let allAnime = document.querySelectorAll(".anime-button-div");
         for (let card of allAnime) {
             card.addEventListener("click", function(event) {
@@ -401,7 +536,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // When the page is loaded, popup and overlay are display = none
     let popup = document.querySelectorAll(".popup");
     let overlay = document.querySelectorAll(".overlay");
-    popup.forEach(function(el) {
+    // "popup" was recognised as node lists and therefore this layout was effective in making them display = none
+    popup.forEach(function(el) { 
         el.style.display = "none";
     });
     overlay.forEach(function(el) {
@@ -410,32 +546,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Attach event listeners to anime cards initially
     attachCardListeners();
+    attachExitButtonListeners();
 
     // Search bar code
     const searchBar = document.getElementById('search-bar');
     searchBar.addEventListener('input', function () {
+        // Converts letters to lowercase before comparing the texts
         const searchText = searchBar.value.toLowerCase();
         const filteredAnime = animeList.filter(anime => anime.title.toLowerCase().includes(searchText));
         displayAnimeCards(filteredAnime);
     });
 
-    // Category filtering functionality
+    // Category filtering functionality using radio buttons
     const radioButtons = document.querySelectorAll('.category-filters input[type="radio"]');
+    // For each filter button...
     radioButtons.forEach(radioButton => {
         radioButton.addEventListener('change', function () {
             const selectedCategory = radioButton.value;
             const searchText = searchBar.value.toLowerCase();
             let filteredAnime;
 
+            // If the category is "All Anime" display all
             if (selectedCategory === 'all') {
                 filteredAnime = animeList;
             } else {
+                // Compares the category of the anime with the radio button title
                 filteredAnime = animeList.filter(anime =>
                     anime.category1.toLowerCase() === selectedCategory.toLowerCase() ||
                     anime.category2.toLowerCase() === selectedCategory.toLowerCase()
                 );
             }
-
             filteredAnime = filteredAnime.filter(anime => anime.title.toLowerCase().includes(searchText));
             displayAnimeCards(filteredAnime);
         });
@@ -447,7 +587,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const animeId = checkbox.getAttribute('data-anime-id');
         const episode = checkbox.getAttribute('data-episode');
         const savedState = localStorage.getItem(`anime-${animeId}-ep-${episode}`);
-
         if (savedState === 'checked') {
             checkbox.checked = true;
         }
@@ -476,8 +615,12 @@ document.addEventListener('DOMContentLoaded', () => {
             updateAverage();
         });
     });
+    // Update chart everytime to see live movement in the graph everytime checkbox is checked
     myChart.update();
 });
+
+// Update watch average
+updateAverage();
 
 // Calculate weekly average on graph
 function updateAverage() {
@@ -496,7 +639,8 @@ radioButtons.forEach(radioButton => {
 
 // Display cards with selected filters 
 function filterAnimeCards(category) {
-    const cards = document.querySelectorAll(".anime-button-div");
+    // Filter anime in the search section 
+    const cards = document.querySelectorAll(".anime-search-cards.anime-button-div");
     cards.forEach(card => {
         const cardCategory1 = card.getAttribute("data-category1");
         const cardCategory2 = card.getAttribute("data-category2");

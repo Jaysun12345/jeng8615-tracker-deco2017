@@ -1,7 +1,10 @@
 @import 'layout';
 @import 'typography';
 
-// MAIN TYPOGRAPHY 
+/***********************************************/
+/*               Main Typography               */
+/***********************************************/
+
 * {
     font-family: "Montserrat", sans-serif;
 }
@@ -19,6 +22,11 @@ h1 {
     margin-left: 20px;
 }
 
+/***********************************************/
+/*                Anime Popup                  */
+/***********************************************/
+
+// Shows more about the anime and their episodes
 .popup {
     display: none;
     position: fixed;
@@ -36,7 +44,6 @@ h1 {
         width: 40px;
         margin-bottom: 10px;
     }
-    //These are the desktop styles for the pop-up
     .popup-intro-content {
         display: flex;
         justify-content: space-between;
@@ -76,7 +83,7 @@ h1 {
                 }
             }
         }
-        .popup-display-image {
+        .popup-display-image { 
                 width: 170px;
                 margin-left: 15px;
                 margin-right: 5%;
@@ -84,6 +91,7 @@ h1 {
                 box-shadow: 2px 2px 8px #959595;
         }
     }
+    // Styles for anime cards layout - wrapping and sizing
     .add-to-watchlist, .remove-from-viewvault {
         display: flex;
         flex-direction: row;
@@ -102,12 +110,14 @@ h1 {
             margin-left: 10px;
         }
     }
+    // The exit button on each popup 
     .close-popup {
         img {
             width: 30px;
             margin-bottom: 10px;
         }
     }
+    // Layout for the episodes in each popup 
     .popupEps {
         margin-top: 15px;
         padding-right: 5%;
@@ -141,17 +151,82 @@ h1 {
                     font-size: 10px;
                 }
             }
+            // Code for checkboxes from W3 Schools
+            .container {
+                display: flex;
+                align-content: flex-end;
+                position: relative;
+                margin-right: 0px;
+                width: 25px;
+                margin-top: 20px;
+                margin-bottom: 48px;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+              }
+              /* Hide the browser's default checkbox */
+              .container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+              }
+              /* Create a custom checkbox */
+              .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                background-color: white;
+                border: 1.3px solid black;
+                border-radius: 50%;
+              }
+              /* On mouse-over, add a grey background color */
+              .container:hover input ~ .checkmark {
+                background-color: #eee;
+              }
+              /* When the checkbox is checked, add a blue background */
+              .container input:checked ~ .checkmark {
+                border-radius: 50%;
+                background-color: black;
+              }
+              /* Create the checkmark/indicator (hidden when not checked) */
+              .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+              }
+              /* Show the checkmark when checked */
+              .container input:checked ~ .checkmark:after {
+                display: block;
+              }
+              /* Style the checkmark/indicator */
+              .container .checkmark:after {
+                left: 8px;
+                top: 4px;
+                width: 7px;
+                height: 13px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
         }
-        img {
+        img { // Images for each episode display image
             width: 120px;
             border: 2px solid #a1a1a1;
             border-radius: 10px;
         }
     }
-    .load-more {
+    .load-more { // Load more text - static button
         display: flex;
         gap: 10px;
-        margin-left: 42%;
+        margin-left: 43.5%;
         margin-top: 30px;
         img {
             margin-top: 6px;
@@ -159,7 +234,7 @@ h1 {
         }
     }
 }
-
+// Styling for the overlay when the popup is active 
 .overlay {
     display: none;
     position: fixed;
@@ -171,7 +246,13 @@ h1 {
     z-index: 999;
 }
 
+/***********************************************/
+/*                Shared Section               */
+/***********************************************/
+
+// The "Your Viewvault" section at the beginning of the page
 .your-viewvault {
+    // Green explore box
     .explore-button {
         margin-top: -10px;
         .green-explore-box {
@@ -189,7 +270,7 @@ h1 {
             border-radius: 10px;
             margin-bottom: -80px;
         }
-        img {
+        img { // Png image of anime girl up against glass
             width: 210px;
             top: -94px;
             left: 48%;
@@ -244,14 +325,17 @@ h1 {
     }
 }
 
-//Desktop layout
+/***********************************************/
+/*           Desktop Specific Styles           */
+/***********************************************/
+
 @media (min-width: 768px) {
-    header, .mobile-nav {
+    header, .mobile-nav { // Mobile features are hidden
         display: none;
     }
     main {
         background-color: white;
-        padding: 20px 40px 20px 40px;
+        padding: 20px 40px 10px 40px;
         margin-top: 30px;
         margin-bottom: 40px;
         margin-left: 10px;
@@ -325,7 +409,7 @@ h1 {
         .smaller-grey-text { //text under each subheading
             color: #646464;
             font-size: 13px;
-            margin-top: -13px;
+            margin-top: -4px;
             margin-bottom: 5px;
         }
         .calendar-line {
@@ -342,7 +426,7 @@ h1 {
                 color: white;
             }
         }
-        .sub-headings {
+        .sub-headings { // Big subheadings 
             display: flex;
             justify-content: space-between;
             h2 {
@@ -360,6 +444,7 @@ h1 {
                 }
             }
         }
+        // Layout of cards
         .anime-search-cards, .view-vault-cards, .aside-recommended {
             display: flex;
             flex-wrap: wrap;
@@ -466,16 +551,13 @@ h1 {
     }
 }
 
-@media (max-width: 1050px) {
-    .popup-display-img {
-        display: none;
-    }
-}
+/***********************************************/
+/*           Mobile Specific Styles            */
+/***********************************************/
 
-
-//Mobile layout
+//Mobile layout - slight edits of the already established styles
 @media (max-width: 768px) {
-    aside, .hidden {
+    aside, .hidden { // These sections of the desktop layout become hidden when window size is small
         display: none;
     }
     header {
@@ -499,6 +581,7 @@ h1 {
         position: fixed;
         bottom: 0px;
         border-top: 2px solid #CBCBCB;
+        z-index: 100;
         img {
             height: 25px;
         }
@@ -517,7 +600,7 @@ h1 {
         }
         .smaller-grey-text {
             color: #646464;
-            margin-top: -20px;
+            margin-top: -8x;
         }
         .calendar-line {
             display: flex;

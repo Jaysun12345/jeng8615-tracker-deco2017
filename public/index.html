@@ -20,7 +20,7 @@
     <title>ViewVault</title>
 </head>
 
-<!-- Script tag for the  bar graph -->
+<!-- Script tag for the bar graph -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 
 <body>
@@ -38,9 +38,12 @@
         <!-- MAIN -->
         <div class="col-12 col-md-8">
             <main>
-                <div class="hidden">
+                <!-- Top section of desktop layout with the 2 buttons -->
+                <!-- class hidden for when the page reaches the mobile breakpoint and then goes away -->
+                <div class="hidden"> 
                     <section class="desktop-header-section">
                         <img src="../img/main-images/settings-button.png" alt="settings cog button">
+                        <!-- Profile button that opens up "login" -->
                         <div x-data="{ isOpen: false }">
                             <button class = "profile-button" @click="isOpen = !isOpen" @keydown.escape="isOpen = false">
                                 <img class="dropdown-arrow" src="../img/home-page/arrow-down-white.png" alt="dropdown arrow">
@@ -67,19 +70,23 @@
                             <p id="date-container">Unknown</p>
                         </section>
                     </div>
+                    <!-- Is hidden after unique breakpoint -->
                     <div class="hidden">
                         <img class="chibi-naruto" src="../img/home-page/naruto-chibi.png">
                     </div>
                 </div>
                 <!-- Your ViewVault -->
+                <!-- Section to keep your chosen anime cards -->
                 <section class="your-viewvault">
                     <container class="sub-headings">
                         <h2 style="margin-bottom: 15px;">Your ViewVault</h2>
                     </container>
+                    <!-- Main container for cards -->
                     <container class="view-vault-cards"></container>
                     <container class="sub-headings">
-                        <h2 style="font-size:13px; font-weight: 400; color:#646464;">Add to Your ViewVault</h2>
+                        <p class="smaller-grey-text">Add to Your ViewVault</p>
                     </container>
+                    <!-- Explore button leads to search section -->
                     <section class="explore-button">
                         <a href="href=l#search-section-anchor">
                             <button class="green-explore-box">
@@ -90,13 +97,14 @@
                     </section>
                 </section>
                 <!-- Your Screentime -->
+                <!-- Screentime graph -->
                 <section class="your-screentime" style="margin-top: -50px;">
                     <container class="sub-headings">
                         <h2>Your Screentime</h2>
-                        <button>
+                        <!-- <button>
                             <p>see more</p>
                             <img src="../img/main-images/see-more-icon.png">
-                        </button>
+                        </button> -->
                     </container>
                     <div class="graph-container">
                         <p class="graph-title">Monitor your watching habits<span><img src="../img/main-images/dots.png"></span></p>
@@ -109,15 +117,17 @@
                     <a name="search-section-anchor"></a>
                     <container class="sub-headings">
                         <h2>Search</h2>
-                        <button>
+                        <!-- <button>
                             <p>see more</p>
                             <img src="../img/main-images/see-more-icon.png">
-                        </button>
+                        </button> -->
                     </container>
                     <p class="smaller-grey-text">Some anime you might like</p>
+                    <!-- Search bar -->
                     <div class="search-container">
                         <input type="text" id="search-bar" placeholder="Search for anime...">
                     </div>
+                    <!-- Category filter buttons -->
                     <div class="category-filters">
                         <label>
                             <input type="radio" name="category" value="all" checked>
@@ -152,13 +162,8 @@
                             <img src="../img/category-tags/Drama.png" alt="drama filter"/>
                         </label>
                     </div>
-                    
+                    <!-- Container for all the search cards -->
                     <container class="anime-search-cards"></container>
-                    <!-- <div class="overlay"></div>
-                    <div class="popup">
-                        <span class="close-popup"><img src="../img/main-images/anime-popup/exit-button.png"></span>
-                        <div class="popup-intro-content"></div>
-                    </div> -->
                 </section>
             </main>
         </div>
@@ -173,24 +178,14 @@
                 <section class="screentime-graphs">
                     <container class="sub-headings">
                         <h2>Your Screentime</h2>
-                        <button>
+                        <!-- <button>
                             <p>see more</p>
                             <img src="../img/main-images/see-more-icon.png">
-                        </button>
+                        </button> -->
                     </container>
                     <img class="aside-graph" src="../img/main-images/weekly-screentime.png" alt="weekly screentime graph"/>
                     <img class="aside-graph" src="../img/main-images/episodes-watched.png" alt="weekly screentime graph"/>
                 </section>
-                <container class="sub-headings">
-                    <h2 style="margin-bottom: -5px; margin-top: 15px;">Add to Your ViewVault</h2>
-                </container>
-                <container class="aside-recommended"></container>
-                <!-- <section class="explore-button">
-                    <button class="green-explore-box">
-                        Explore
-                    </button>
-                    <img src="../img/home-page/search-pic.png">
-                </section> -->
             </aside>
         </div>
         <!-- NAVIGATION BAR ON MOBILE -->
