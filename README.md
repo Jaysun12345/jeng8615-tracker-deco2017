@@ -29,7 +29,7 @@ To open the website, download the zip and get the file.
 Open the terminal in VScode and navigate to the project:
 
 ```
-cd jeng8615-tracker-2017 
+cd jeng8615-tracker-deco2017 
 ```
 
 To download the node modules into the project
@@ -48,7 +48,7 @@ Copy the link that appears in the terminal in your internet browser (`http://loc
 
 * Login
 
-At the top of the page with the profile pic and the dropdown arrow, this can be clicked to see a "login" modal. The typed name is stored in local storage so when the page is refreshed, it will stay "logged in".
+At the top of the page with the profile pic and the dropdown arrow, this can be clicked to see a "login" modal. The typed name is stored in local storage so when the page is refreshed, it will stay "logged in" with the `inputtedName` still displayed.
 
 ![image of login modal](/img/screenshots/login.png)
 
@@ -56,7 +56,7 @@ At the top of the page with the profile pic and the dropdown arrow, this can be 
 
 These cards represent anime shows and upon clicking, a modal will appear with the anime's details and episodes. 
 
-On each anime card modal, there is an "add to viewvault" button, by clicking this, it will be added to another section of the page where the user can easily access when they return to the page.
+On each anime card modal, there is an `Add to ViewVault` button, by clicking this, it will be added to the "viewvault" section of the page where the user can easily access anime cards when they return to the page.
 
 ![image of viewvault](/img/screenshots/your-viewvault.png)
 ![anime card modal](/img/screenshots/anime-modal.png)
@@ -69,7 +69,7 @@ Once a user has watched an episode, they can mark it off as "watched" through ch
 
 * Screentime graphs
 
-Once a checkbox is checked, the "episode length" value is added to the screentime graph and updates instantly with every checkbox that is marked off, along with the weekly average. These values represent how much the user is watching.
+Once a checkbox is checked, the `episode length` value is added to the screentime graph and updates instantly with every checkbox that is marked off, along with the weekly average. These values represent how much the user is watching.
 
 The screentime graphs on the side are static, and normally would only change with large changes in data. These graphs only emphasise the purpose of the website being a media consumption tracker. 
 
@@ -94,7 +94,7 @@ From the hi-fidelity mockups, the project was narrowed down to its main features
 
 ![hi-fidelity mockups](/img/screenshots/hi-fidelity-mockups.png)
 
-Features that added little to the prototype were removed for exampple: 
+Features that added little to the prototype were removed for example: 
 
 Action bar:
 ![action bar](/img/screenshots/action-bar.png)
@@ -104,7 +104,9 @@ More anime details:
 
 ## Refinements and Iterations
 
-A major iteration was the narrowing down of the prototype to demonstrate only the main features. The first iteration of the website was a translation of the app which meant it would carry over the tabs and navigation bar that appears at the bottom of the mobile display.  
+Here, the importance of refining and adapting to changes in the prototype from the mockups was demonstrated. 
+
+A major iteration was the narrowing down of the prototype to demonstrate only the main features. The first iteration of the website was a full representation of the app which meant it would carry over the tabs and navigation bar that appear in the mobile display.  
 
 However, it was decided to remove the navigation bar from the desktop display due to the narrowing down of the scope of the prototype as well as an aesthetic decision as the navigation bar felt out of place. This is an image of the previous layout:
 
@@ -112,13 +114,35 @@ However, it was decided to remove the navigation bar from the desktop display du
 
 An aesthetic choice was to change the look of the checkboxes as previously, they were small and did not match the aesthetic of the website. Code was inspired from W3 schools to change the aesthetic of the checkboxes.
 
+Before:
+
 ![old checkboxes](/img/screenshots/checkboxes.png)
 ![old checkbox checked](/img/screenshots/checked-checkbox.png)
+
+After:
+
 ![new checkbox](/img/screenshots/new-checkbox.png)
 
-Final refinements of the code involved the search function and category filters. When using these features, they would search through all the anime cards including the ones that were meant to stay static in the viewvault section. So, by refining the code to only filter through cards in the search section of the page, it was fixed.
+Final refinements of the code involved the search function and category filters. When using these features, they would search through all the anime cards including the ones that were meant to stay static in the viewvault section. So, by refining the code to only filter through `.anime-search-cards` in the search section of the page, it was fixed.
 
-![fixing search bar and category filters](/img/screenshots/filter-fix.png)
+```
+// Display cards with selected filters 
+function filterAnimeCards(category) {
+    // Filter anime in the search section 
+    const cards = document.querySelectorAll(".anime-search-cards.anime-button-div");
+    cards.forEach(card => {
+        const cardCategory1 = card.getAttribute("data-category1");
+        const cardCategory2 = card.getAttribute("data-category2");
+
+        if (category === "all" || cardCategory1 === category || cardCategory2 === category) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+        attachExitButtonListeners();
+    });
+}
+```
 
 The removal of dead buttons that lead to nowhere. These buttons were intended to lead the user to other features of the app, however are no longer needed. For example, a lot of the "see more" buttons were removed
 
