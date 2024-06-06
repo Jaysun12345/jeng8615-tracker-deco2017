@@ -22,7 +22,7 @@ The purpose of ViewVault is to find and track the anime that you have watched. I
 
 Notes for marker: the best view of the website is when there is only room for 4 anime cards in each row
 
-## Features
+## Usage
 
 I have already used github pages to publish something previously so it will not allow me to publish this site. 
 
