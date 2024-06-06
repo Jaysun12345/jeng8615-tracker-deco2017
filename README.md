@@ -9,6 +9,7 @@ ViewVault - a way to keep track of your anime
 ## Table of Contents
 
 - [Introduction](##introduction)
+- [Usage](##usage)
 - [Features](##features)
 - [Comparisons between Mockups and Prototypes](##comparisons)
 - [Refinements and Iterations](##refinements-and-iterations)
@@ -20,6 +21,22 @@ ViewVault - a way to keep track of your anime
 The purpose of ViewVault is to find and track the anime that you have watched. In addition to this, the app also tracks your screentime, allowing you to keep track of what you watched whilst keeping you conscious of how long you have been watching anime.
 
 Notes for marker: the best view of the website is when there is only room for 4 anime cards in each row
+
+## Features
+
+I have already used github pages to publish something previously so it will not allow me to publish this site. 
+
+To open the website, download the zip and get the file.
+
+Open the file in VS code and open the terminal and type in "cd jeng8615-tracker-2017" to find the file in your downloads. In the following image, my file is on my desktop so it is as follows:
+
+![how to find my file](/img/screenshots/finding-file.png)
+
+type in "npm run dev" in the terminal once inside the file 
+
+copy and paste the server link that appears (for example: "http://localhost:1234")
+
+![launching the website](/img/screenshots/launching-the-website.png)
 
 ## Features
 
