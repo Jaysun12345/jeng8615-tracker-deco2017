@@ -24,19 +24,26 @@ Notes for marker: the best view of the website is when there is only room for 4 
 
 ## Usage
 
-I have already used github pages to publish something previously so it will not allow me to publish this site. 
-
 To open the website, download the zip and get the file.
 
-Open the file in VS code and open the terminal and type in "cd jeng8615-tracker-2017" to find the file in your downloads. In the following image, my file is on my desktop so it is as follows:
+Open the terminal in VScode and navigate to the project:
 
-![how to find my file](/img/screenshots/finding-file.png)
+```
+cd jeng8615-tracker-2017 
+```
 
-type in "npm run dev" in the terminal once inside the file 
+To download the node modules into the project
+``` 
+npm install
+```
 
-copy and paste the server link that appears (for example: "http://localhost:1234")
+Then type into the terminal:
+```
+npm run dev
+```
 
-![launching the website](/img/screenshots/launching-the-website.png)
+Copy the link that appears in the terminal in your internet browser (for example: `http://localhost:8888`or `http://localhost:1234`)
+
 
 ## Features
 
