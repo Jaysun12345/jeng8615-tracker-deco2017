@@ -8,13 +8,13 @@ ViewVault - a way to keep track of your anime
 
 ## Table of Contents
 
-- [Introduction](##introduction)
-- [Usage](##usage)
-- [Features](##features)
-- [Comparisons between Mockups and Prototypes](##comparisons)
-- [Refinements and Iterations](##refinements-and-iterations)
-- [Acknowledgements and References](##acknowledgements-and-references)
-- [Author](##author)
+- [Introduction](#introduction)
+- [Usage](#usage)
+- [Features](#features)
+- [Comparisons between Mockups and Prototypes](#comparisons-between-mockups-and-prototypes)
+- [Refinements and Iterations](#refinements-and-iterations)
+- [Acknowledgements and References](#acknowledgements-and-references)
+- [Author](#author)
 
 ## Introduction
 
@@ -39,11 +39,10 @@ npm install
 
 Then type into the terminal:
 ```
-npm run dev
+npm run start
 ```
 
-Copy the link that appears in the terminal in your internet browser (for example: `http://localhost:8888`or `http://localhost:1234`)
-
+Copy the link that appears in the terminal in your internet browser (`http://localhost:1234`) to enter the website
 
 ## Features
 
@@ -55,19 +54,24 @@ At the top of the page with the profile pic and the dropdown arrow, this can be 
 
 * Anime Cards
 
-These cards represent real animes and upon clicking, a modal will appear with the anime's details and episodes. These can be "added to ViewVault" meaning that it will be stored in another section of the site for easier access if you would like to continue watching the series. These anime can also be removed once added.
+These cards represent anime shows and upon clicking, a modal will appear with the anime's details and episodes. 
+
+On each anime card modal, there is an "add to viewvault" button, by clicking this, it will be added to another section of the page where the user can easily access when they return to the page.
 
 ![image of viewvault](/img/screenshots/your-viewvault.png)
+![anime card modal](/img/screenshots/anime-modal.png)
 
 * Episode checklist
 
-Once an anime episode is watched, on each anime card modal, you can tick off watched episodes to demonstrate to the user that they have watched it 
+Once a user has watched an episode, they can mark it off as "watched" through checking a check box 
 
 ![episode checklist](/img/screenshots/episode-checklist.png)
 
 * Screentime graphs
 
-Once a checkbox is checked, the episode length is added to the screentime graph and updates instantly with every checkbox that is marked off along with the weekly average. The screentime graphs on the side are static, but are meant to be dynamic with large changes in data. Therefore since this project is small, these data changes would not change a lot and therefore the functionality would not be seen as clearly. 
+Once a checkbox is checked, the "episode length" value is added to the screentime graph and updates instantly with every checkbox that is marked off, along with the weekly average. These values represent how much the user is watching.
+
+The screentime graphs on the side are static, and normally would only change with large changes in data. These graphs only emphasise the purpose of the website being a media consumption tracker. 
 
 ![screentime graph main](/img/screenshots/screentime-main.png)
 ![screentime aside graphs](/img/screenshots/screentime-aside.png)
@@ -100,19 +104,19 @@ More anime details:
 
 ## Refinements and Iterations
 
-A major iteration that took place was the narrowing down of the prototype to demonstrate only the main features. The first iteration of the website was going to be a translation of the app which meant it would carry over the tabs and navigation bar that appears at the bottom of the mobile display.  
+A major iteration was the narrowing down of the prototype to demonstrate only the main features. The first iteration of the website was a translation of the app which meant it would carry over the tabs and navigation bar that appears at the bottom of the mobile display.  
 
-However, we decided to remove the navigation tab from the desktop display was a practical decision due to the narrowing down of mt prototype as well as an aesthetic one as the navigation bar felt extremely out of place on destop. This is an image of the previous layout:
+However, it was decided to remove the navigation bar from the desktop display due to the narrowing down of the scope of the prototype as well as an aesthetic decision as the navigation bar felt out of place. This is an image of the previous layout:
 
 ![desktop previous layout](/img/screenshots/desktop-previous-layout.png)
 
-An aesthetic choice was to change the look of the checkboxes on each anime card modal as they were small and did not match the aesthetic of the website. Code was inspired from W3 schools to change the aesthetic of the checkboxes.
+An aesthetic choice was to change the look of the checkboxes as previously, they were small and did not match the aesthetic of the website. Code was inspired from W3 schools to change the aesthetic of the checkboxes.
 
 ![old checkboxes](/img/screenshots/checkboxes.png)
 ![old checkbox checked](/img/screenshots/checked-checkbox.png)
 ![new checkbox](/img/screenshots/new-checkbox.png)
 
-One of the final refinements of the code was the search function and category filters. When using these features, they would search through all the anime cards including the ones that were meant to stay static in the viewvault. So, by refining the code to only filter through cards in the search section of the page, it was fixed
+Final refinements of the code involved the search function and category filters. When using these features, they would search through all the anime cards including the ones that were meant to stay static in the viewvault section. So, by refining the code to only filter through cards in the search section of the page, it was fixed.
 
 ![fixing search bar and category filters](/img/screenshots/filter-fix.png)
 

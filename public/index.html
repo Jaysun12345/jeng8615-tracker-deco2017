@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./scss/main.scss">
     
     <!-- Adding Alpine.js framework to the file -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script>
@@ -29,10 +29,10 @@
         <div class="col-12 col-md-0">
             <header>
                 <!-- settings button -->
-                <img src="img/main-images/settings-button.png" alt="settings cog">
+                <img src="../img/main-images/settings-button.png" alt="settings cog">
                 <h2 class="header-headings">Home</h2>
                 <!-- profile picture -->
-                <img src="img/main-images/profile-pic.png" alt="anime dog profile pic">
+                <img src="../img/main-images/profile-pic.png" alt="anime dog profile pic">
             </header>
         </div>
         <!-- MAIN -->
@@ -42,12 +42,12 @@
                 <!-- class hidden for when the page reaches the mobile breakpoint and then goes away -->
                 <div class="hidden"> 
                     <section class="desktop-header-section">
-                        <img src="img/main-images/settings-button.png" alt="settings cog button">
+                        <img src="../img/main-images/settings-button.png" alt="settings cog button">
                         <!-- Profile button that opens up "login" -->
                         <div x-data="{ isOpen: false }">
                             <button class = "profile-button" @click="isOpen = !isOpen" @keydown.escape="isOpen = false">
                                 <img class="dropdown-arrow" src="../img/home-page/arrow-down-white.png" alt="dropdown arrow">
-                                <img src="img/main-images/profile-pic.png" alt="emoji profile picture">
+                                <img src="../img/main-images/profile-pic.png" alt="emoji profile picture">
                             </button>
                             <div x-show="isOpen" @click.away="isOpen = false" id="login"> 
                             <!-- This is the login section, when users login, their name will pop up on the main page -->
@@ -65,8 +65,8 @@
                     <div>
                         <h1 style="font-size: 35px">Good afternoon<span id="default-name" style="font-size: 35px; font-weight: 900;">, welcome to ViewVault.</span></h1>
                         <section class="calendar-line">
-                            <img class="mobile-calendar-icon" src="img/home-page/calendar.png" alt="dark calendar icon">
-                            <img class="hidden" src="img/home-page/calendar-white.png" alt="white calendar icon">
+                            <img class="mobile-calendar-icon" src="../img/home-page/calendar.png" alt="dark calendar icon">
+                            <img class="hidden" src="../img/home-page/calendar-white.png" alt="white calendar icon">
                             <p id="date-container">Unknown</p>
                         </section>
                     </div>
