@@ -47,7 +47,7 @@
                         <div x-data="{ isOpen: false }">
                             <button class = "profile-button" @click="isOpen = !isOpen" @keydown.escape="isOpen = false">
                                 <img class="dropdown-arrow" src="../img/home-page/arrow-down-white.png" alt="dropdown arrow">
-                                <img src="../img/main-images/profile-pic.png" alt="emoji profile picture">
+                                <img src="img/main-images/profile-pic.png" alt="emoji profile picture">
                             </button>
                             <div x-show="isOpen" @click.away="isOpen = false" id="login"> 
                             <!-- This is the login section, when users login, their name will pop up on the main page -->
@@ -65,8 +65,8 @@
                     <div>
                         <h1 style="font-size: 35px">Good afternoon<span id="default-name" style="font-size: 35px; font-weight: 900;">, welcome to ViewVault.</span></h1>
                         <section class="calendar-line">
-                            <img class="mobile-calendar-icon" src="../img/home-page/calendar.png">
-                            <img class="hidden" src="../img/home-page/calendar-white.png">
+                            <img class="mobile-calendar-icon" src="img/home-page/calendar.png" alt="dark calendar icon">
+                            <img class="hidden" src="img/home-page/calendar-white.png" alt="white calendar icon">
                             <p id="date-container">Unknown</p>
                         </section>
                     </div>
